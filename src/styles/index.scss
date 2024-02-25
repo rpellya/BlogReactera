@@ -1,8 +1,11 @@
-@import './nullstyle';
-@import './variables/global';
-@import './themes/light';
-@import './themes/dark';
+@import 'nullstyle';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
 
 .App {
-	font-size: 40px;
+	font: var(--font-m);
+
+	background: var(--bg-color);
+	color: var(--primary-color);
 }
