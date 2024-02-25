@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Suspense } from 'react'
 import { AboutPageAsync } from './pages/About/AboutPage.async'
 import { MainPageAsync } from './pages/MainPage/MainPage.async'
-import '../index.scss'
+import './styles/index.scss'
 
 export function App() {
 	return (
