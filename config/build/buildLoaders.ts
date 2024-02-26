@@ -27,16 +27,8 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 	}
 
 	const fontLoader = {
-		test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
-		use: [
-			{
-				loader: 'file-loader',
-				options: {
-					name: '[name].[ext]',
-					outputPath: 'fonts/',
-				},
-			},
-		],
+		test: /\.(woff|woff2|eot|ttf|otf)$/i,
+		type: 'asset/resource',
 	}
 
 	return [typescirptLoader, cssLoader, fontLoader]

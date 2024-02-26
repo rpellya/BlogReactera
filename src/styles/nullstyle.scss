@@ -1,8 +1,6 @@
-
 /* Указываем box sizing */
 *,
 *::before,
-
 *::after {
 	box-sizing: border-box;
 }
@@ -63,7 +61,7 @@ button,
 textarea,
 select {
 	font: inherit;
-	// font-weight: $font-weight;
+	font-weight: 400;
 }
 
 /*Change text in autofill textbox*/
