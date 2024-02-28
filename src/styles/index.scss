@@ -1,0 +1,12 @@
+@import 'nullstyle';
+@import 'variables/global';
+@import 'themes/light';
+@import 'themes/dark';
+
+.App {
+	min-height: 100vh;
+	font: var(--font-m);
+
+	background: var(--bg-color);
+	color: var(--primary-color);
+}

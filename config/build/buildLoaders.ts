@@ -26,5 +26,10 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 		exclude: /node_modules/,
 	}
 
-	return [typescirptLoader, cssLoader]
+	const fontLoader = {
+		test: /\.(woff|woff2|eot|ttf|otf)$/i,
+		type: 'asset/resource',
+	}
+
+	return [typescirptLoader, cssLoader, fontLoader]
 }
