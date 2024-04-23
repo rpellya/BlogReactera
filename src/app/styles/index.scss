@@ -1,7 +1,7 @@
-@import 'nullstyle';
-@import 'variables/global';
-@import 'themes/light';
-@import 'themes/dark';
+@import "nullstyle";
+@import "variables/global";
+@import "themes/light";
+@import "themes/dark";
 
 .App {
   min-height: 100vh;
@@ -9,4 +9,13 @@
 
   background: var(--bg-color);
   color: var(--primary-color);
+}
+
+.content-page {
+  display: flex;
+}
+
+.page-wrapper {
+  flex-grow: 1;
+  padding: 20px;
 }
