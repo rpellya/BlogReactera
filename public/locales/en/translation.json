@@ -1,3 +1,12 @@
 {
-    "Language": "English"
+  "Language": "English",
+  "Switch": "Switch",
+  "Main": "Main",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  }
 }

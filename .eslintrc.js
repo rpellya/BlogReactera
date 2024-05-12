@@ -1,7 +1,10 @@
+const { isPropertySignature } = require('typescript');
+
 module.exports = {
     env: {
         browser: true,
         es2021: true,
+        jest: true,
     },
     extends: [
         'plugin:react/recommended',
@@ -26,7 +29,9 @@ module.exports = {
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],
         'no-tabs': 0,
-        'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.tsx'] }],
+        'react/jsx-filename-extension': [2,
+            { extensions: ['.js', '.jsx', '.tsx'] },
+        ],
         'import/no-unresolved': 'off',
         'import/prefer-default-export': 'off',
         'react/require-default-props': 'off',
@@ -38,7 +43,14 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'no-unused-vars': 'warn',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error', {
+                markupOnly: true,
+
+            },
+        ],
+        'max-len': ['error', { ignoreComments: true }],
+        'no-string-literal': 'off',
     },
     globals: {
         __IS_DEV__: true,
