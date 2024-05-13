@@ -1,5 +1,3 @@
-const { isPropertySignature } = require('typescript');
-
 module.exports = {
     env: {
         browser: true,

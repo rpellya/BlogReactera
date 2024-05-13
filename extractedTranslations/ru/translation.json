@@ -1,6 +1,16 @@
 {
+  "About": "About",
   "About us": "About us",
   "Language": "Language",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
+  "Main": "Main",
   "Main page": "Main page",
+  "Switch": "Switch",
   "dsdsa": "dsdsa"
 }
