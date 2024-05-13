@@ -2,13 +2,13 @@
 *,
 *::before,
 *::after {
-	box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /* Убираем внутренние отступы */
 ul,
 ol {
-	padding: 0;
+    padding: 0;
 }
 
 /* Убираем внешние отступы */
@@ -26,33 +26,33 @@ figcaption,
 blockquote,
 dl,
 dd {
-	margin: 0;
+    margin: 0;
 }
 
 /* Выставляем основные настройки по-умолчанию для body */
 body {
-	min-height: 100vh;
-	scroll-behavior: smooth;
-	text-rendering: optimizeSpeed;
-	-webkit-font-smoothing: antialiased;
-	font-weight: 400;
+    min-height: 100vh;
+    scroll-behavior: smooth;
+    text-rendering: optimizespeed;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 400;
 }
 
-/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class*/
+/* Удаляем стандартную стилизацию для всех ul и il, у которых есть атрибут class */
 ul[class],
 ol[class] {
-	list-style: none;
+    list-style: none;
 }
 
 /* Элементы a, у которых нет класса, сбрасываем до дефолтных стилей */
 a:not([class]) {
-	text-decoration-skip-ink: auto;
+    text-decoration-skip-ink: auto;
 }
 
 /* Упрощаем работу с изображениями */
 img {
-	max-width: 100%;
-	display: block;
+    max-width: 100%;
+    display: block;
 }
 
 /* Наследуем шрифты для инпутов и кнопок */
@@ -60,12 +60,12 @@ input,
 button,
 textarea,
 select {
-	font: inherit;
-	font-weight: 400;
+    font: inherit;
+    font-weight: 400;
 }
 
-/*Change text in autofill textbox*/
+/* Change text in autofill textbox */
 input:-webkit-autofill {
-	-webkit-text-fill-color: black !important;
-	-webkit-background-clip: text;
+    -webkit-text-fill-color: black !important;
+    background-clip: text;
 }
