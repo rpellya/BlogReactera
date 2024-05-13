@@ -2,15 +2,9 @@
   "About": "About",
   "About us": "About us",
   "Language": "Language",
-  "Loading": {
-    "": {
-      "": {
-        "": ""
-      }
-    }
-  },
+  "Loading": "Loading",
   "Main": "Main",
   "Main page": "Main page",
-  "Switch": "Switch",
-  "dsdsa": "dsdsa"
+  "Page not found": "Page not found",
+  "Switch": "Switch"
 }
