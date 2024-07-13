@@ -11,7 +11,7 @@ const App = () => {
     return (
         <div className={classNames('App', {}, [theme])}>
             <Suspense
-            // eslint-disable-next-line i18next/no-literal-string
+                // eslint-disable-next-line i18next/no-literal-string
                 fallback="loading"
             >
                 <NavBar />
