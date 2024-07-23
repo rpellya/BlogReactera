@@ -10,10 +10,7 @@ const App = () => {
     const { theme } = useTheme();
     return (
         <div className={classNames('App', {}, [theme])}>
-            <Suspense
-                // eslint-disable-next-line i18next/no-literal-string
-                fallback="loading"
-            >
+            <Suspense fallback="">
                 <NavBar />
                 <div className="content-page">
                     <Sidebar />
