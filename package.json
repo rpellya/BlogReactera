@@ -14,7 +14,6 @@
 		"test:unit": "jest --config ./config/jest/jest.config.ts",
 		"test:ui": "npx loki test",
 		"test:ui:ok": "npx loki approve",
-		"unit": "jest --config ./config/jest/jest.config.ts",
 		"storybook": "start-storybook -p 6006 -c ./config/storybook",
 		"storybook:build": "build-storybook -c ./config/storybook"
 	},
