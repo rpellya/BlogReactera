@@ -1,5 +1,5 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { NavBar } from 'widgets/NavBar';
+import { Navbar } from 'widgets/NavBar';
 import { Sidebar } from 'widgets/Sidebar';
 import { Suspense } from 'react';
 import { AppRouter } from './providers/router';
@@ -11,7 +11,7 @@ const App = () => {
     return (
         <div className={classNames('App', {}, [theme])}>
             <Suspense fallback="">
-                <NavBar />
+                <Navbar />
                 <div className="content-page">
                     <Sidebar />
                     <AppRouter />
