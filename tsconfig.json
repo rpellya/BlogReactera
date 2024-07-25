@@ -45,6 +45,6 @@
 		"./src/**/*.tsx",
 	],
 	"exclude": [
-		"./config/storybook/webpack.config.ts"
+		"config/storybook/webpack.config.ts"
 	]
 }
