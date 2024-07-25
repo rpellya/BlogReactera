@@ -7,7 +7,7 @@ on:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    stratedy:
+    strategy:
       matrix:
         node-version: [17.x]
 
@@ -25,3 +25,5 @@ jobs:
         run: npm run lint:ts
       - name: linting scss
         run: npm run lint:scss
+      - name: unit testing
+        run: npm run test:unit
