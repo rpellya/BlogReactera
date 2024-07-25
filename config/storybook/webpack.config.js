@@ -1,10 +1,10 @@
 // Этот файд можно сделать и .ts, но проблема в типе при .map(rule: RuleSetRule) => ...
 // Не нашел другого решения, как изменить файл на js
 
-import path from 'path';
-import { buildCssLoader } from '../build/loaders/buildCssLoader';
+const path = require('path');
+const { buildCssLoader } = require('../build/loaders/buildCssLoader.cjs');
 
-export default ({ config }) => {
+module.exports = ({ config }) => {
     const paths = {
         build: '',
         html: '',
