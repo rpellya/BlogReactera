@@ -96,7 +96,7 @@
 				"mobile": false
 			},
 			"chrome.iphone7": {
-				"target": "chrome.chrome",
+				"target": "chrome.docker",
 				"preset": "iPhone 7"
 			}
 		}
