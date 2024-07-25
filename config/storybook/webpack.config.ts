@@ -1,3 +1,4 @@
+/* eslint-disable-line */
 import webpack, { RuleSetRule } from 'webpack';
 import path from 'path';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
