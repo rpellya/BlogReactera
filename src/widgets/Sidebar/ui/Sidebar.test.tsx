@@ -1,7 +1,4 @@
 import { fireEvent, screen } from '@testing-library/react';
-import {
-    renderWithTranslation,
-} from 'shared/lib/tests/renderWithTranslation/renderWithTranslation';
 import { componentRender } from 'shared/lib/tests/componentRouter/componentRouter';
 import { Sidebar } from './Sidebar';
 
