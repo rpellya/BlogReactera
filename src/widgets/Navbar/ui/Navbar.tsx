@@ -11,23 +11,7 @@ export const Navbar = ({ className }: NavbarProps) => {
     const { t } = useTranslation();
     return (
         <div className={classNames(cls.Navbar, {}, [className])}>
-            <div className={cls.links}>
-                <AppLink
-                    to="/"
-                    className={cls.mainLink}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    {t('Main')}
-                </AppLink>
-                <AppLink
-                    // eslint-disable-next-line i18next/no-literal-string
-                    to="/about"
-                    className={cls.mainLink}
-                    theme={AppLinkTheme.SECONDARY}
-                >
-                    {t('About')}
-                </AppLink>
-            </div>
+            /
         </div>
     );
 };
