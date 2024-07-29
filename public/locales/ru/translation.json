@@ -2,7 +2,10 @@
   "Language": "Русский",
   "Switch": "Сменить",
   "Main": "Главная",
-  "About": "О нас",
+  "About us": "О нас",
   "Page not found": "Страница не найдена",
-  "Loading": "Загрузка"
+  "Loading": "Загрузка",
+  "An unforeseen mistake occurred": "Произошла непредвиденная ошибка",
+  "Refresh the page": "Обновить страницу",
+  "Short language": "Ru"
 }

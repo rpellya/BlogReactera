@@ -2,7 +2,10 @@
   "Language": "English",
   "Switch": "Switch",
   "Main": "Main",
-  "About": "About",
+  "About us": "About us",
   "Page not found": "Page not found",
-  "Loading": "Loading"
+  "Loading": "Loading",
+  "An unforeseen mistake occurred": "An unforeseen mistake occurred",
+  "Refresh the page": "Refresh the page",
+  "Short language": "En"
 }

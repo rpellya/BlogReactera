@@ -1,10 +1,13 @@
 {
   "About": "About",
   "About us": "About us",
+  "An unforeseen mistake occurred": "An unforeseen mistake occurred",
   "Language": "Language",
   "Loading": "Loading",
   "Main": "Main",
   "Main page": "Main page",
   "Page not found": "Page not found",
-  "Switch": "Switch"
+  "Refresh the page": "Refresh the page",
+  "Switch": "Switch",
+  "throw error": "throw error"
 }
