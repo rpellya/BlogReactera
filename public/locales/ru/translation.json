@@ -7,5 +7,7 @@
   "Loading": "Загрузка",
   "An unforeseen mistake occurred": "Произошла непредвиденная ошибка",
   "Refresh the page": "Обновить страницу",
-  "Short language": "Ru"
+  "Short language": "Ru",
+  "Increment": "Прибавление",
+  "Decrement": "Убывание"
 }
