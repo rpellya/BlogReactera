@@ -9,5 +9,8 @@
   "Refresh the page": "Обновить страницу",
   "Short language": "Ru",
   "Increment": "Прибавление",
-  "Decrement": "Убывание"
+  "Decrement": "Убывание",
+  "Login": "Вход",
+  "Enter username": "Введите username",
+  "Enter password": "Введите password"
 }

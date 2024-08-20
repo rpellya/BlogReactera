@@ -39,7 +39,6 @@ export const Sidebar = ({ className }: SidebarProps) => {
                     <span className={cls.link}>{t('Main')}</span>
                 </AppLink>
                 <AppLink
-                    // eslint-disable-next-line i18next/no-literal-string
                     to={RoutePath.about}
                     className={cls.item}
                     theme={AppLinkTheme.SECONDARY}
@@ -49,12 +48,12 @@ export const Sidebar = ({ className }: SidebarProps) => {
                 </AppLink>
             </div>
             <Button
-                data-testid="sidebar-toggle"
+                square
                 type="button"
+                data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.collapsedBtn}
                 theme={ButtonTheme.BACKGOUND_INVERTED}
-                square
                 size={ButtonSize.L}
             >
                 {collapsed ? '>' : '<'}

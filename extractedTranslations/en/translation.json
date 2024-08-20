@@ -1,21 +1,15 @@
 {
-  "About": "About",
   "About us": "About us",
   "An unforeseen mistake occurred": "An unforeseen mistake occurred",
-  "Auth": "Auth",
   "Decrement": "Decrement",
+  "Enter password": "Enter password",
+  "Enter username": "Enter username",
   "Increment": "Increment",
-  "Language": "Language",
-  "Loading": "Loading",
   "Login": "Login",
-  "Lorem aswklklkj jawekw uq hswj aew dquwbdwq": "Lorem aswklklkj jawekw uq hswj aew dquwbdwq",
   "Main": "Main",
   "Main page": "Main page",
   "Page not found": "Page not found",
   "Refresh the page": "Refresh the page",
-  "Switch": "Switch",
   "throw error": "throw error",
-  "Введите username": "Введите username",
-  "Введите пароль": "Введите пароль",
   "Войти": "Войти"
 }
