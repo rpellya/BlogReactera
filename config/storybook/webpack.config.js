@@ -2,6 +2,7 @@
 // Не нашел другого решения, как изменить файл на js
 
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const { buildCssLoader } = require('../build/loaders/buildCssLoader.cjs');
 
 module.exports = ({ config }) => {
@@ -28,6 +29,10 @@ module.exports = ({ config }) => {
         use: ['@svgr/webpack'],
     });
     config.module?.rules?.push(buildCssLoader(true));
+
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };

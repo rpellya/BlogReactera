@@ -1,15 +1,18 @@
 {
   "About us": "About us",
   "An unforeseen mistake occurred": "An unforeseen mistake occurred",
+  "Auth form": "",
   "Decrement": "Decrement",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Increment": "Increment",
   "Login": "Login",
+  "Logout": "",
   "Main": "Main",
   "Main page": "Main page",
   "Page not found": "Page not found",
   "Refresh the page": "Refresh the page",
+  "You introduced a wrong login or password": "",
   "throw error": "throw error",
   "Войти": "Войти"
 }
