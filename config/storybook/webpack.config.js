@@ -2,6 +2,7 @@
 // Не нашел другого решения, как изменить файл на js
 
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const { buildCssLoader } = require('../build/loaders/buildCssLoader.cjs');
 
 module.exports = ({ config }) => {
@@ -14,7 +15,6 @@ module.exports = ({ config }) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
-    // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module?.rules?.map((rule) => {
         if (/svg/.test(rule.test)) {
             return { ...rule, exclude: /\.svg$/i };
@@ -28,6 +28,10 @@ module.exports = ({ config }) => {
         use: ['@svgr/webpack'],
     });
     config.module?.rules?.push(buildCssLoader(true));
+
+    config.plugins.push(new DefinePlugin({
+        __IS_DEV__: true,
+    }));
 
     return config;
 };

@@ -5,8 +5,8 @@ module.exports = {
         jest: true,
     },
     extends: [
-        'plugin:react/recommended',
         'airbnb',
+        'plugin:react/recommended',
         'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -21,6 +21,7 @@ module.exports = {
         'react',
         '@typescript-eslint',
         'i18next',
+        'react-hooks',
     ],
     rules: {
         'react/jsx-indent': [2, 4],
@@ -40,7 +41,8 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
         'i18next/no-literal-string': [
             'error', {
                 markupOnly: true,
@@ -50,6 +52,12 @@ module.exports = {
         'max-len': ['error', { ignoreComments: true, code: 100 }],
         'no-string-literal': 'off',
         'linebreak-style': 0,
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'react-hooks/rules-of-hooks': 'error',
+        'react-hooks/exhaustive-deps': 'error',
+        'no-param-reassign': 'off',
+        'react/display-name': 'off'
     },
     globals: {
         __IS_DEV__: true,

@@ -7,5 +7,13 @@
   "Loading": "Загрузка",
   "An unforeseen mistake occurred": "Произошла непредвиденная ошибка",
   "Refresh the page": "Обновить страницу",
-  "Short language": "Ru"
+  "Short language": "Ru",
+  "Increment": "Прибавление",
+  "Decrement": "Убывание",
+  "Login": "Вход",
+  "Enter username": "Введите username",
+  "Enter password": "Введите password",
+  "Auth form": "Форма авторизации",
+  "You introduced a wrong login or password": "Вы ввели неправильный логин или пароль",
+  "Logout": "Выйти"
 }
