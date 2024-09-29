@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
-import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
 import { useDispatch, useSelector } from 'react-redux';
 import { useCallback } from 'react';
@@ -63,7 +63,7 @@ export const LoginForm = ({ className }: LoginFormProps) => {
                 disabled={isLoading}
                 onClick={onLoginClick}
                 className={cls.loginBtn}
-                theme={ButtonTheme.OUTLINE}
+                theme={ButtonVariant.OUTLINE}
             >
                 {t('Login')}
             </Button>

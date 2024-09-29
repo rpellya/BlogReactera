@@ -5,8 +5,8 @@ module.exports = {
         jest: true,
     },
     extends: [
-        'plugin:react/recommended',
         'airbnb',
+        'plugin:react/recommended',
         'plugin:i18next/recommended',
     ],
     parser: '@typescript-eslint/parser',
@@ -41,7 +41,8 @@ module.exports = {
         'import/extensions': 'off',
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
-        'no-unused-vars': 'warn',
+        'no-unused-vars': 'off',
+        '@typescript-eslint/no-unused-vars': 'warn',
         'i18next/no-literal-string': [
             'error', {
                 markupOnly: true,
@@ -56,6 +57,7 @@ module.exports = {
         'react-hooks/rules-of-hooks': 'error',
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
+        'react/display-name': 'off'
     },
     globals: {
         __IS_DEV__: true,

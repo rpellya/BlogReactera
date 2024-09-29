@@ -47,7 +47,7 @@ export default {
     setupFilesAfterEnv: ['<rootDir>config/jest/setupTest.ts'],
     moduleNameMapper: {
         '\\.s?css$': 'identity-obj-proxy',
-        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
+        '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'), // mock svg files
     },
     // roots: [
     //     '<rootDir>',

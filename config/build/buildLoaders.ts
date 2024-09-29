@@ -1,7 +1,6 @@
 import webpack from 'webpack';
 import { BuildOptions } from './types/config';
-
-const { buildCssLoader } = require('./loaders/buildCssLoader.cjs');
+import { buildCssLoader } from './loaders/buildCssLoader.cjs';
 
 export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const svgLoader = {

@@ -15,7 +15,6 @@ module.exports = ({ config }) => {
     config.resolve?.modules?.push(paths.src);
     config.resolve?.extensions?.push('.ts', '.tsx');
 
-    // eslint-disable-next-line no-param-reassign
     config.module.rules = config.module?.rules?.map((rule) => {
         if (/svg/.test(rule.test)) {
             return { ...rule, exclude: /\.svg$/i };
