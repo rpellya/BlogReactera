@@ -14,7 +14,7 @@ export const loginByUsername = createAsyncThunk<
     { rejectValue: string }
 >(
     'login/loginByUsername',
-    async (authdata, thunlApi) => {
+    async (authdata, thunkApi) => {
         try {
             const response = await axios.post<User>('http://localhost:8000/login', authdata);
             if (!response.data) {
@@ -22,12 +22,12 @@ export const loginByUsername = createAsyncThunk<
             }
 
             localStorage.setItem(USER_LOCALSTORAGE_KEY, JSON.stringify(response.data));
-            thunlApi.dispatch(userActions.setAuthData(response.data));
+            thunkApi.dispatch(userActions.setAuthData(response.data));
 
             return response.data;
         } catch (error) {
             console.log(error);
-            return thunlApi.rejectWithValue('error');
+            return thunkApi.rejectWithValue('error');
         }
     },
 );
