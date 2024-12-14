@@ -7,7 +7,7 @@ import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import {
     DynamicModuleLoader,
-    ReducersLists,
+    ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
@@ -25,7 +25,7 @@ export interface LoginFormProps {
 
 // Could be transferred to Prop, but so a link to
 // a new object will not be created for each render
-const initialReducers: ReducersLists = {
+const initialReducers: ReducersList = {
     loginForm: loginReducer,
 };
 

@@ -1,13 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
     DynamicModuleLoader,
-    ReducersLists,
+    ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { fetchProfileData, ProfileCard, profileReducer } from 'entities/Profile';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useEffect } from 'react';
 
-const redusers: ReducersLists = {
+const redusers: ReducersList = {
     profile: profileReducer,
 };
 

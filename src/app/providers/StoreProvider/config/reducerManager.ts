@@ -3,6 +3,13 @@ import {
 } from '@reduxjs/toolkit';
 import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema';
 
+/**
+ * Reducer Manager
+ * @param initialReducers: ReducersMapObject<StateSchema>
+ * @returns getReducerMap: () => reducers
+ * @returns reducer: combinedReducer(state: StateSchema, action: AnyAction)
+ */
+
 export function createReducerManager(
     initialReducers: ReducersMapObject<StateSchema>,
 ): ReducerManager {
