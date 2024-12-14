@@ -21,6 +21,7 @@ export const loginSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder
+            // describe every use-case (pending, filfilled, rejected) for fetch
             .addCase(loginByUsername.pending, (state) => {
                 state.error = undefined;
                 state.isLoading = true;
