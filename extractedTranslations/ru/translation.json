@@ -3,16 +3,18 @@
   "An unforeseen mistake occurred": "An unforeseen mistake occurred",
   "Auth form": "Auth form",
   "Decrement": "Decrement",
+  "Edit": "Edit",
   "Enter password": "Enter password",
   "Enter username": "Enter username",
   "Increment": "Increment",
   "Login": "Login",
   "Logout": "Logout",
-  "Main": "Main",
   "Main page": "Main page",
   "Page not found": "Page not found",
+  "Profile": "Profile",
   "Refresh the page": "Refresh the page",
   "You introduced a wrong login or password": "You introduced a wrong login or password",
-  "throw error": "throw error",
-  "Войти": "Войти"
+  "Your lastname": "Your lastname",
+  "Your name": "Your name",
+  "throw error": "throw error"
 }
