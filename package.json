@@ -110,7 +110,6 @@
 				"target": "chrome.docker",
 				"preset": "iPhone 7"
 			}
-		},
-		"fetchFailIgnore": "http://172.30.144.1:6006/profile"
+		}
 	}
 }
