@@ -13,6 +13,12 @@ interface DynamicModuleLoaderProps {
     removeAfterUnmount?: boolean;
 }
 
+/**
+ *  For using in components
+ * @param reducers ReducersList
+ * @param removeAfterUnmount boolean;
+ * @returns children
+ */
 export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     const {
         reducers,
@@ -26,14 +32,15 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
     useEffect(() => {
         Object.entries(reducers).forEach(([name, reducer]) => {
             store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` });
+            dispatch({ type: `@INIT ${name} reducer` }); // for devtools
         });
 
         return () => {
+            // you can not delete, but the all state, which accumulated, will remain in memory
             if (removeAfterUnmount) {
                 Object.entries(reducers).forEach(([name]) => {
                     store.reducerManager.remove(name as StateSchemaKey);
-                    dispatch({ type: `@DESTROY ${name} reducer` });
+                    dispatch({ type: `@DESTROY ${name} reducer` }); // for devtools
                 });
             }
         };

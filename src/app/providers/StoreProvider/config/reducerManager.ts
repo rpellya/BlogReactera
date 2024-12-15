@@ -4,7 +4,7 @@ import {
 import { ReducerManager, StateSchema, StateSchemaKey } from './StateSchema';
 
 /**
- * Reducer Manager
+ * Reducer Manager - loads asynchronously reducers at the moment when they are needed (allows you not to drag all the reducers in main bundle)
  * @param initialReducers: ReducersMapObject<StateSchema>
  * @returns getReducerMap: () => reducers
  * @returns reducer: combinedReducer(state: StateSchema, action: AnyAction)
@@ -22,6 +22,8 @@ export function createReducerManager(
     return {
         getReducerMap: () => reducers,
 
+        // root reduce - creates a copy of the new state, delets Keystoremove (data) from the state
+        // and adds a new combinedReducer(state, action) with a new state and cction
         reduce: (state: StateSchema, action: AnyAction) => {
             if (keysToRemove.length > 0) {
                 state = { ...state };
@@ -34,6 +36,7 @@ export function createReducerManager(
             return combinedReducer(state, action);
         },
 
+        // adding a new reducer by key
         add: (key: StateSchemaKey, reducer: Reducer) => {
             if (!key || reducers[key]) {
                 return;
@@ -43,6 +46,7 @@ export function createReducerManager(
             combinedReducer = combineReducers(reducers);
         },
 
+        // adding a new reducer by key
         remove: (key: StateSchemaKey) => {
             if (!key || !reducers[key]) {
                 return;
