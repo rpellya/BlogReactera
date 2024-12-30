@@ -1,4 +1,11 @@
 {
-    "Profile": "Profile",
-    "Edit": "Edit"
+  "Profile": "Profile",
+  "Edit": "Edit",
+  "Try to update the page": "Try to update the page",
+  "There was an error": "Try to update the page",
+  "profile.Your name": "Your name",
+  "Your name": "Your name",
+  "Your lastname": "Your lastname",
+  "Save": "Save",
+  "Cancel": "Cancel"
 }
