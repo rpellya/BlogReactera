@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Text, TextAlign, TextTheme } from 'shared/ui/Text/Text';
 import { Input } from 'shared/ui/Input/Input';
 import { Loader } from 'shared/ui/Loader/Loader';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
 import cls from './ProfileCard.module.scss';
 import { Profile } from '../../model/types/profile';
 
@@ -14,8 +15,16 @@ interface ProfileCardProps {
     readonly?: boolean;
     onChangeFirstname?: (value?: string) => void;
     onChangeLastname?: (value?: string) => void;
+    onChangeAge?: (value?: string) => void;
+    onChangeCity?: (value?: string) => void;
+    onChangeUsername?: (value?: string) => void;
+    onChangeAvatar?: (value?: string) => void;
 }
 
+/**
+ * Profile card component for disp user profile information
+ * This component isn't depended on any other state
+ */
 export const ProfileCard = (props: ProfileCardProps) => {
     const {
         className,
@@ -25,6 +34,10 @@ export const ProfileCard = (props: ProfileCardProps) => {
         readonly = false,
         onChangeFirstname,
         onChangeLastname,
+        onChangeAge,
+        onChangeCity,
+        onChangeUsername,
+        onChangeAvatar,
     } = props;
     const { t } = useTranslation('profile');
 
@@ -48,10 +61,20 @@ export const ProfileCard = (props: ProfileCardProps) => {
             </div>
         );
     }
+    const onKeyPress = (event: React.KeyboardEvent) => {
+        if (!/[0-9]/.test(event.key) && event.key !== 'Backspace') {
+            event.preventDefault();
+        }
+    };
 
     return (
         <div className={classNames(cls.ProfileCard, {}, [className])}>
             <div className={cls.data}>
+                {data?.avatar && (
+                    <div className={cls.avatarWrapper}>
+                        <Avatar src={data?.avatar} alt={data?.username} />
+                    </div>
+                )}
                 <Input
                     value={data?.firstname || ''}
                     placeholder={t('Your name')}
@@ -65,6 +88,35 @@ export const ProfileCard = (props: ProfileCardProps) => {
                     readOnly={readonly}
                     className={cls.input}
                     onChange={onChangeLastname}
+                />
+                <Input
+                    value={data?.age}
+                    placeholder={t('Your age')}
+                    readOnly={readonly}
+                    className={cls.input}
+                    onChange={onChangeAge}
+                    onKeyPress={onKeyPress}
+                />
+                <Input
+                    value={data?.city || ''}
+                    placeholder={t('City')}
+                    readOnly={readonly}
+                    className={cls.input}
+                    onChange={onChangeCity}
+                />
+                <Input
+                    value={data?.username || ''}
+                    placeholder={t('Enter username')}
+                    readOnly={readonly}
+                    className={cls.input}
+                    onChange={onChangeUsername}
+                />
+                <Input
+                    value={data?.avatar || ''}
+                    placeholder={t('Enter link to avatar')}
+                    readOnly={readonly}
+                    className={cls.input}
+                    onChange={onChangeAvatar}
                 />
             </div>
         </div>

@@ -6,5 +6,9 @@
   "Your name": "Ваше имя",
   "Your lastname": "Ваша фамилия",
   "Save": "Сохранить",
-  "Cancel": "Отменить"
+  "Cancel": "Отменить",
+  "Your age": "Ваш возраст",
+  "City": "Город",
+  "Enter username": "Введите имя пользователя",
+  "Enter link to avatar": "Введите ссылку для аватара"
 }
