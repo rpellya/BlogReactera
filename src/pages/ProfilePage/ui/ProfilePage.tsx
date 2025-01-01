@@ -5,7 +5,6 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import {
     fetchProfileData,
-    getProfileData,
     getProfileError,
     getProfileForm,
     getProfileIsLoading,
@@ -17,6 +16,8 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useCallback, useEffect } from 'react';
 import { useSelector } from 'react-redux';
+import { Currency } from 'entities/Currency';
+import { Country } from 'entities/Country';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const redusers: ReducersList = {
@@ -63,6 +64,14 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         dispatch(profileActions.updateProfile({ avatar: value || 'picture' }));
     }, [dispatch]);
 
+    const onChangeCurrency = useCallback((currency: Currency) => {
+        dispatch(profileActions.updateProfile({ currency }));
+    }, [dispatch]);
+
+    const onChangeCountry = useCallback((country: Country) => {
+        dispatch(profileActions.updateProfile({ country }));
+    }, [dispatch]);
+
     return (
         <DynamicModuleLoader reducers={redusers} removeAfterUnmount>
             <div className={classNames('', {}, [className])}>
@@ -78,6 +87,8 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
                     onChangeCity={onChangeCity}
                     onChangeUsername={onChangeUsername}
                     onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
+                    onChangeCountry={onChangeCountry}
                 />
             </div>
         </DynamicModuleLoader>
