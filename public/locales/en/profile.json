@@ -13,5 +13,12 @@
   "Enter username": "Enter username",
   "Enter link to avatar": "Enter link to avatar",
   "Select currency": "Select currency",
-  "Select country": "Select country"
+  "Select country": "Select country",
+  "errors": {
+    "incorrectAge": "Incorrect age",
+    "incorrectCountry": "Incorrect country",
+    "incorrectUserData": "Incorrect user data",
+    "noData": "No data",
+    "serverError": "Server error"
+  }
 }

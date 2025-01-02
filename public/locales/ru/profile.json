@@ -11,5 +11,12 @@
   "City": "Город",
   "Enter username": "Введите имя пользователя",
   "Enter link to avatar": "Введите ссылку для аватара",
-  "Select country": "Выберите страну"
+  "Select country": "Выберите страну",
+  "errors": {
+    "incorrectAge": "Введите корректный возраст",
+    "incorrectCountry": "Выберите страну",
+    "incorrectUserData": "Введите корректные данные",
+    "noData": "Нет данных",
+    "serverError": "Ошибка сервера"
+  }
 }

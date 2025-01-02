@@ -28,5 +28,12 @@
   "Your age": "Your age",
   "Your lastname": "Your lastname",
   "Your name": "Your name",
+  "errors": {
+    "incorrectAge": "incorrectAge",
+    "incorrectCountry": "incorrectCountry",
+    "incorrectUserData": "incorrectUserData",
+    "noData": "noData",
+    "serverError": "serverError"
+  },
   "throw error": "throw error"
 }

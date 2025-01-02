@@ -10,5 +10,12 @@
   "Try to update the page": "",
   "Your age": "",
   "Your lastname": "",
-  "Your name": ""
+  "Your name": "",
+  "errors": {
+    "incorrectAge": "",
+    "incorrectCountry": "",
+    "incorrectUserData": "",
+    "noData": "",
+    "serverError": ""
+  }
 }
