@@ -34,3 +34,14 @@ NoAuthDark.decorators = [
     ThemeDecorator(Theme.DARK),
     StoreDecorator({ user: {} }),
 ];
+
+export const Blue = Template.bind({});
+Blue.args = {};
+Blue.decorators = [ThemeDecorator(Theme.BLUE)];
+
+export const NoAuthBlue = Template.bind({});
+NoAuthBlue.args = {};
+NoAuthBlue.decorators = [
+    ThemeDecorator(Theme.BLUE),
+    StoreDecorator({ user: {} }),
+];
