@@ -17,5 +17,6 @@
   "Enter password": "Enter password",
   "Auth form": "Auth form",
   "You introduced a wrong login or password": "You introduced a wrong login or password",
-  "Logout": "Logout"
+  "Logout": "Logout",
+  "Select currency": "Select currency"
 }

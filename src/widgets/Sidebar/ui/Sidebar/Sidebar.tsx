@@ -12,9 +12,14 @@ interface SidebarProps {
 }
 
 export const Sidebar = memo(({ className }: SidebarProps) => {
-    const [collapsed, setCollapsed] = useState<boolean>(false);
+    const storedCollapsed = localStorage.getItem('siderCollapsed') === 'true';
+    const [collapsed, setCollapsed] = useState<boolean>(storedCollapsed);
+
     const onToggle = () => {
-        setCollapsed((prev) => !prev);
+        setCollapsed((prev) => {
+            localStorage.setItem('siderCollapsed', JSON.stringify(!prev));
+            return !prev;
+        });
     };
 
     const itemList = useMemo(() => SidebarItemsList.map((item) => (
