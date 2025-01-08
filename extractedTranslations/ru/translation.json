@@ -1,6 +1,10 @@
 {
   "About us": "About us",
+  "An error occurred while loading the article": "An error occurred while loading the article",
   "An unforeseen mistake occurred": "An unforeseen mistake occurred",
+  "Article Details": "Article Details",
+  "Article details": "Article details",
+  "Article page": "Article page",
   "Auth form": "Auth form",
   "Cancel": "Cancel",
   "City": "City",
@@ -12,6 +16,13 @@
   "Enter username": "Enter username",
   "Error": "Error",
   "Increment": "Increment",
+  "Loading": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Login": "Login",
   "Logout": "Logout",
   "Main page": "Main page",
@@ -21,6 +32,9 @@
   "Save": "Save",
   "Select country": "Select country",
   "Select currency": "Select currency",
+  "The article is not fined": "The article is not fined",
+  "The article is not founed": "The article is not founed",
+  "The article was not found": "The article was not found",
   "There was an error": "There was an error",
   "There was an error when downloading": "There was an error when downloading",
   "Try to update the page": "Try to update the page",
@@ -35,5 +49,7 @@
     "noData": "noData",
     "serverError": "serverError"
   },
-  "throw error": "throw error"
+  "throw error": "throw error",
+  "Произошла ошибка при загрузке статье": "Произошла ошибка при загрузке статье",
+  "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи"
 }

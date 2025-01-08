@@ -11,7 +11,7 @@ const initialState: ProfileSchema = {
 };
 
 /**
- * Actions, redusers (edit, delete prodile)
+ * Actions, redusers (edit, delete profile)
  */
 export const profileSlice = createSlice({
     name: 'profile',

@@ -3,14 +3,17 @@ import { CSSProperties, useMemo } from 'react';
 import cls from './Avatar.module.scss';
 
 interface AvatarProps {
-    src: string;
+    src?: string;
     className?: string;
     size?: number;
     alt?: string;
 }
 
 export const Avatar = ({
-    alt, className, src, size,
+    alt,
+    className,
+    src,
+    size,
 }: AvatarProps) => {
     const styles = useMemo<CSSProperties>(() => ({
         width: size || 80,
