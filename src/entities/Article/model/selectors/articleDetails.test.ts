@@ -1,6 +1,4 @@
 import { StateSchema } from 'app/providers/StoreProvider';
-import { Currency } from 'entities/Currency';
-import { Country } from 'entities/Country';
 import {
     getArticleDetailsData,
     getArticleDetailsError,
