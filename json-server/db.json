@@ -94,15 +94,15 @@
     },
     {
       "id": "2",
-      "text": "some comment 2",
+      "text": "Muu-muu Muu-muu Muu-muu Muu-muu Muu-muu ",
       "articleId": "1",
-      "userId": "1"
+      "userId": "3"
     },
     {
-      "id": "2",
-      "text": "some comment 3",
+      "id": "3",
+      "text": "Rar rar rar rar rar rar rar rar rar rar ",
       "articleId": "1",
-      "userId": "1"
+      "userId": "2"
     }
   ],
   "users": [
@@ -110,13 +110,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN"
+      "role": "ADMIN",
+      "avatar": "https://avatars.githubusercontent.com/u/103450915?v=4"
     },
     {
       "id": "2",
-      "username": "user",
+      "username": "Dino",
       "password": "123",
-      "role": "USER"
+      "role": "USER",
+      "avatar": "https://artbreeder.b-cdn.net/imgs/32a11d35fc07075fcf994cdaebfd.jpeg"
+    },
+    {
+      "id": "3",
+      "username": "Meduza",
+      "password": "123",
+      "role": "USER",
+      "avatar": "https://artbreeder.b-cdn.net/imgs/830e379a404fd2264bc42b714886.jpeg"
     }
   ],
   "profile": {

@@ -1,5 +1,6 @@
 {
-    "The article was not found": "Статья не найдена",
-    "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
-    "Article details": "Информация о статье"
+  "The article was not found": "Статья не найдена",
+  "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
+  "Article details": "Информация о статье",
+  "Comments": "Комментарии"
 }

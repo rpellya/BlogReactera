@@ -12,6 +12,7 @@ const initialState: ProfileSchema = {
 
 /**
  * Actions, redusers (edit, delete profile)
+ * extraReducers - redusers with business logic for async thunk that can have anything in it
  */
 export const profileSlice = createSlice({
     name: 'profile',
