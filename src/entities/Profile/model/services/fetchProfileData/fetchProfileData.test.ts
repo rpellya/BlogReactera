@@ -1,4 +1,3 @@
-import { userActions } from 'entities/User';
 import { TestAsyncThunk } from 'shared/lib/tests/TestAyncThunk/TestAyncThunk';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';

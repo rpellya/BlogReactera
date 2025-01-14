@@ -3,7 +3,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAyncThunk/TestAyncThunk';
 import { loginByUsername } from './loginByUsername';
 
 describe('loginByUsername', () => {
-    const userValue = { username: 'admin', id: 1 };
+    const userValue = { username: 'admin', id: '1' };
 
     // beforeEach(() => {
     //     // for mocked
