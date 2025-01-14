@@ -63,7 +63,7 @@ Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({
             country: Country.Russia,
             city: 'Saint-P.',
             username: 'admin',
-            avatar: 'https://avatars.githubusercontent.com/u/103450915?v=4',
+            avatar,
         },
     },
 })];
