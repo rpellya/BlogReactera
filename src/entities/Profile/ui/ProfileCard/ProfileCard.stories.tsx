@@ -3,6 +3,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import { Theme } from 'app/providers/ThemeProvider';
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
+import avatar from 'shared/assets/tests/storybook.jpg';
 import { ProfileCard } from './ProfileCard';
 
 export default {
@@ -25,7 +26,7 @@ PrimaryDefault.args = {
         country: Country.Russia,
         city: 'Saint-P.',
         username: 'admin',
-        avatar: 'https://avatars.githubusercontent.com/u/103450915?v=4',
+        avatar,
     },
 };
 
@@ -49,7 +50,7 @@ DarkDefault.args = {
         country: Country.Russia,
         city: 'Saint-P.',
         username: 'admin',
-        avatar: 'https://avatars.githubusercontent.com/u/103450915?v=4',
+        avatar,
     },
 };
 DarkDefault.decorators = [ThemeDecorator(Theme.DARK)];
