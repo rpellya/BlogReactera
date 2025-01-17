@@ -3,7 +3,8 @@ import { memo, useMemo, useState } from 'react';
 import { ThemeSwitcher } from 'shared/ui/ThemeSwitcher/ThemeSwitcher';
 import { LangSwitcher } from 'shared/ui/LangSwitcher/LangSwitcher';
 import { Button, ButtonSize, ButtonVariant } from 'shared/ui/Button/Button';
-import { SidebarItemsList } from 'widgets/Sidebar/model/items';
+import { useSelector } from 'react-redux';
+import { getSiderbarItems } from '../../model/selecotrs/getSidebarItems';
 import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 
@@ -14,6 +15,7 @@ interface SidebarProps {
 export const Sidebar = memo(({ className }: SidebarProps) => {
     const storedCollapsed = localStorage.getItem('siderCollapsed') === 'true';
     const [collapsed, setCollapsed] = useState<boolean>(storedCollapsed);
+    const sidebarItemsList = useSelector(getSiderbarItems);
 
     const onToggle = () => {
         setCollapsed((prev) => {
@@ -22,13 +24,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
         });
     };
 
-    const itemList = useMemo(() => SidebarItemsList.map((item) => (
+    const itemList = useMemo(() => sidebarItemsList.map((item) => (
         <SidebarItem
             key={item.path}
             item={item}
             collapsed={collapsed}
         />
-    )), [collapsed]);
+    )), [collapsed, sidebarItemsList]);
     return (
         <div
             data-testid="sidebar"
