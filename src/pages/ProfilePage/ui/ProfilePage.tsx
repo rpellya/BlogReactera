@@ -23,6 +23,7 @@ import { Country } from 'entities/Country';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { useParams } from 'react-router-dom';
 import { ProfilePageHeader } from './ProfilePageHeader/ProfilePageHeader';
 
 const redusers: ReducersList = {
@@ -41,6 +42,7 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const isLoading = useSelector(getProfileIsLoading);
     const readOnly = useSelector(getProfileReadOnly);
     const validateErrors = useSelector(getProfileValidateErrors);
+    const { id } = useParams<{ id: string }>();
 
     const validateErrorTranslates = {
         [ValidateProfileError.INCORRECT_AGE]: t('errors.incorrectAge'),
@@ -50,7 +52,11 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         [ValidateProfileError.SERVER_ERROR]: t('errors.serverError'),
     };
 
-    useInitialEffect(() => dispatch(fetchProfileData()));
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id));
+        }
+    });
 
     const onChangeFirstname = useCallback((value?: string) => {
         dispatch(profileActions.updateProfile({ firstname: value || '' }));

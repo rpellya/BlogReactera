@@ -128,14 +128,28 @@
       "avatar": "https://artbreeder.b-cdn.net/imgs/830e379a404fd2264bc42b714886.jpeg"
     }
   ],
-  "profile": {
-    "firstname": "Roman",
-    "lastname": "Pellya",
-    "age": 20,
-    "currency": "EUR",
-    "country": "Russia",
-    "city": "Saint-P.",
-    "username": "admin",
-    "avatar": "https://avatars.githubusercontent.com/u/103450915?v=4"
-  }
+  "profile": [
+    {
+      "id": "1",
+      "firstname": "Roman",
+      "lastname": "Pellya",
+      "age": 22,
+      "currency": "EUR",
+      "country": "Russia",
+      "city": "Saint-P.",
+      "username": "admin",
+      "avatar": "https://avatars.githubusercontent.com/u/103450915?v=4"
+    },
+    {
+      "id": "2",
+      "firstname": "Dino",
+      "lastname": "Rrar",
+      "age": 11,
+      "currency": "RUB",
+      "country": "Kazakhstan",
+      "city": "Almaty",
+      "username": "user",
+      "avatar": "https://artbreeder.b-cdn.net/imgs/32a11d35fc07075fcf994cdaebfd.jpeg"
+    }
+  ]
 }
