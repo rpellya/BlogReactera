@@ -16,6 +16,7 @@ export const getArticleComments = commentsAdapter.getSelectors<StateSchema>(
     (state) => state.articleDetailsComments || commentsAdapter.getInitialState(),
 );
 
+// in the slice we initialize the state using the method from the docs
 const articleDetailsCommentsSlice = createSlice({
     name: 'comments',
     initialState: commentsAdapter.getInitialState<ArtciclesDetailsCommentsSchema>({
@@ -24,7 +25,12 @@ const articleDetailsCommentsSlice = createSlice({
         error: undefined,
         isLoading: false,
     }),
-    reducers: {},
+    reducers: {
+        // add comment to the state store for a specific article
+        addComment: (state, action: PayloadAction<Comment>) => {
+            commentsAdapter.addOne(state, action.payload);
+        },
+    },
     // extraReducers - redusers with business logic for async thunk that can have anything in it
     extraReducers: (builder) => {
         // describe every use-case (pending, filfilled, rejected) for fetch
@@ -47,4 +53,5 @@ const articleDetailsCommentsSlice = createSlice({
     },
 });
 
+export const { actions: articleDetailsCommentsActions } = articleDetailsCommentsSlice;
 export const { reducer: articleDetailsCommentsReducer } = articleDetailsCommentsSlice;

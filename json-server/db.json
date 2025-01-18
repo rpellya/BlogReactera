@@ -103,6 +103,42 @@
       "text": "Rar rar rar rar rar rar rar rar rar rar ",
       "articleId": "1",
       "userId": "2"
+    },
+    {
+      "text": "dsadsdsdsa",
+      "articleId": "1",
+      "userId": "1",
+      "id": "Rh6M63G"
+    },
+    {
+      "text": "123",
+      "articleId": "1",
+      "userId": "2",
+      "id": "VVeQJfL"
+    },
+    {
+      "text": "Hello from Dinoland",
+      "articleId": "1",
+      "userId": "2",
+      "id": "-PeaY8-"
+    },
+    {
+      "text": "last comment today",
+      "articleId": "1",
+      "userId": "2",
+      "id": "uRPQjUG"
+    },
+    {
+      "text": "last comment today",
+      "articleId": "1",
+      "userId": "2",
+      "id": "ye-lUQz"
+    },
+    {
+      "text": "dddlast comment today",
+      "articleId": "1",
+      "userId": "2",
+      "id": "I2DNSjL"
     }
   ],
   "users": [
@@ -115,7 +151,7 @@
     },
     {
       "id": "2",
-      "username": "Dino",
+      "username": "user",
       "password": "123",
       "role": "USER",
       "avatar": "https://artbreeder.b-cdn.net/imgs/32a11d35fc07075fcf994cdaebfd.jpeg"
