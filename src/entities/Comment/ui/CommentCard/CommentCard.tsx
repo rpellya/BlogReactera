@@ -12,12 +12,17 @@ interface CommentCardProps {
     comment: Comment
 }
 
-export const CommentCard = memo(({ className, comment }: CommentCardProps) => (
-    <div className={classNames(cls.CommentCard, {}, [className])}>
-        <AppLink className={cls.header} to={`${RoutePath.profile}${comment.user.id}`}>
-            {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
-            <Text className={cls.username} title={comment.user.username} />
-        </AppLink>
-        <Text className={cls.text} title={comment.text} />
-    </div>
-));
+export const CommentCard = memo(({ className, comment }: CommentCardProps) => {
+    if (!comment) {
+        return null;
+    }
+    return (
+        <div className={classNames(cls.CommentCard, {}, [className])}>
+            <AppLink className={cls.header} to={`${RoutePath.profile}${comment.user.id}`}>
+                {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar} /> : null}
+                <Text className={cls.username} title={comment.user.username} />
+            </AppLink>
+            <Text className={cls.text} title={comment.text} />
+        </div>
+    );
+});
