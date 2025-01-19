@@ -1,0 +1,118 @@
+.TILE {
+    width: 230px;
+    transition: 0.2s;
+    cursor: pointer;
+
+    .date {
+        display: none;
+        margin-right: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    &:hover {
+        transform: scale(1.06);
+
+        .date {
+            display: block;
+        }
+    }
+
+    .imageWrapper {
+        width: 200px;
+        height: 200px;
+        position: relative;
+    }
+
+    .img {
+        width: 200px;
+        height: 200px;
+        object-fit: cover;
+        user-select: none;
+        pointer-events: none;
+    }
+
+    .infoWrapper {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+
+        .viewsBlock {
+            display: flex;
+            column-gap: 4px;
+            margin-left: auto;
+        }
+    }
+
+    .types p {
+        width: 115px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .views p {
+        margin-left: auto;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .title p {
+        width: 200px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.LIST {
+    width: 100%;
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .viewsBlock {
+        display: flex;
+        column-gap: 4px;
+        margin-left: auto;
+    }
+
+    .header {
+        display: flex;
+        align-items: center;
+    }
+
+    .username {
+        margin-left: 8px;
+    }
+
+    /* stylelint-disable-next-line no-descending-specificity */
+    .date {
+        margin-left: auto;
+    }
+
+    .img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: contain;
+        margin: 8px 0;
+    }
+
+    .title {
+        margin-top: 8px;
+    }
+
+    .footer {
+        margin-top: 8px;
+        display: flex;
+        align-items: center;
+        margin-bottom: 16px;
+    }
+
+    .textBlock {
+        max-height: 200px;
+        overflow-y: hidden;
+    }
+}

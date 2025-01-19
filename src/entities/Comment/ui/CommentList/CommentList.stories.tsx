@@ -4,7 +4,7 @@ import { Theme } from 'app/providers/ThemeProvider';
 import { CommentList } from './CommentList';
 
 export default {
-    title: 'enteties/Comment/CommentList',
+    title: 'entities/Comment/CommentList',
     component: CommentList,
     argTypes: { backgroundColor: { control: 'color' } },
     args: {
