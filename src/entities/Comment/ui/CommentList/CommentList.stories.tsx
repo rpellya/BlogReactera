@@ -30,11 +30,6 @@ Normal.args = {
     ],
 };
 
-export const Loading = Template.bind({});
-Loading.args = {
-    isLoading: true,
-};
-
 export const Dark = Template.bind({});
 Dark.args = {
     comments: [
@@ -52,9 +47,3 @@ Dark.args = {
 
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const LoadingDark = Template.bind({});
-LoadingDark.args = {
-    isLoading: true,
-};
-LoadingDark.decorators = [ThemeDecorator(Theme.DARK)];
