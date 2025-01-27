@@ -235,6 +235,486 @@
           ]
         }
       ]
+    },
+    {
+      "id": "4",
+      "title": "Rust: Безопасность памяти без сборщика мусора",
+      "subtitle": "Как Rust решает проблемы безопасности памяти",
+      "img": "https://example.com/images/rust_logo.png",
+      "createdAt": "30.04.2025",
+      "userId": "1",
+      "views": 8910,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение",
+          "paragraphs": [
+            "Rust — это системный язык программирования, созданный для обеспечения высокой производительности и безопасности памяти."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "fn main() {\n    let x = 5;\n    println!(\"The value of x is: {x}\");\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Основной особенностью Rust является система владения и заимствования, которая позволяет избежать проблем с утечками памяти и безопасностью."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/rust_memory_safety.png",
+          "title": "Безопасность памяти в Rust"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "title": "Go: Простота и производительность",
+      "subtitle": "Почему Go стал популярным языком для разработки серверных приложений",
+      "img": "https://example.com/images/go_logo.png",
+      "createdAt": "05.06.2025",
+      "userId": "1",
+      "views": 2345,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "История создания",
+          "paragraphs": [
+            "Go был создан инженерами Google в 2009 году как ответ на растущие потребности в разработке высокопроизводительных и масштабируемых систем."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "package main\nimport \"fmt\"\nfunc main() {\n    fmt.Println(\"Hello, World!\")\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Простота синтаксиса и высокая производительность делают Go идеальным выбором для разработки серверных приложений и микросервисов."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/go_performance.png",
+          "title": "Производительность Go"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "title": "Swift: Язык будущего для iOS-разработки",
+      "subtitle": "Новые возможности Swift 6 и их влияние на разработку мобильных приложений",
+      "img": "https://example.com/images/swift_logo.png",
+      "createdAt": "12.08.2025",
+      "userId": "1",
+      "views": 6789,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение",
+          "paragraphs": [
+            "Swift — это мощный и интуитивно понятный язык программирования, созданный Apple для разработки приложений под macOS, iOS, watchOS и tvOS."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "let greeting = \"Hello, World!\"\nprint(greeting)"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Swift 6 предлагает новые функции, такие как асинхронная обработка событий и улучшенная поддержка многопоточности, что делает его еще более привлекательным для разработчиков."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/swift_features.png",
+          "title": "Новые возможности Swift 6"
+        }
+      ]
+    },
+    {
+      "id": "7",
+      "title": "C++: Современные подходы к программированию",
+      "subtitle": "Как C++ эволюционирует и адаптируется к новым требованиям индустрии",
+      "img": "https://example.com/images/cpp_logo.png",
+      "createdAt": "25.09.2025",
+      "userId": "1",
+      "views": 1011,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Исторический контекст",
+          "paragraphs": [
+            "C++ был создан Бьярне Страуструпом в начале 1980-х годов как расширение языка C, добавив объектно-ориентированные возможности."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "#include <iostream>\nint main() {\n    std::cout << \"Hello, World!\" << std::endl;\n    return 0;\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Современные стандарты C++, такие как C++17 и C++20, вводят новые концепции, такие как модули и концепты, что делает язык более мощным и удобным для использования."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/cpp_modern_features.png",
+          "title": "Современные особенности C++"
+        }
+      ]
+    },
+    {
+      "id": "8",
+      "title": "JavaScript: Новые возможности ES2025",
+      "subtitle": "Что ждет нас в будущем стандарта JavaScript",
+      "img": "https://example.com/images/javascript_logo.png",
+      "createdAt": "15.10.2025",
+      "userId": "1",
+      "views": 4321,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Предварительный обзор",
+          "paragraphs": [
+            "ES2025 обещает стать одним из самых значительных обновлений JavaScript за последние годы, вводя множество новых функций и улучшений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "const greet = () => console.log('Hello, World!');\ngreet();"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Среди ожидаемых нововведений — поддержка распределенных вычислений, улучшенные механизмы обработки ошибок и новый синтаксис для работы с асинхронными операциями."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/javascript_es2025_features.png",
+          "title": "Новые возможности ES2025"
+        }
+      ]
+    },
+    {
+      "id": "9",
+      "title": "R: Анализ данных и машинное обучение",
+      "subtitle": "Как R помогает исследователям и аналитикам решать сложные задачи",
+      "img": "https://example.com/images/r_logo.png",
+      "createdAt": "22.11.2025",
+      "userId": "1",
+      "views": 9876,
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Введение в R",
+          "paragraphs": [
+            "R — это язык программирования и программное окружение для статистических расчетов и графического представления данных."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "x <- c(1, 2, 3)\ny <- c(4, 5, 6)\nz <- data.frame(x, y)"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Благодаря обширной библиотеке пакетов, таких как tidyverse и caret, R стал незаменимым инструментом для анализа данных и машинного обучения."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/r_data_analysis.png",
+          "title": "Анализ данных в R"
+        }
+      ]
+    },
+    {
+      "id": "10",
+      "title": "Julia: Высокопроизводительные научные вычисления",
+      "subtitle": "Почему Julia стала популярной среди ученых и инженеров",
+      "img": "https://example.com/images/julia_logo.png",
+      "createdAt": "03.12.2025",
+      "userId": "1",
+      "views": 2468,
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "История создания",
+          "paragraphs": [
+            "Julia была создана в 2012 году группой исследователей из Массачусетского технологического института с целью объединить высокую производительность и удобство использования."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "function greet()\n    println(\"Hello, World!\")\nend\ngreet()"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Julia отличается своей скоростью, сравнимой с C и Fortran, но при этом обладает простым и выразительным синтаксисом, близким к MATLAB."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/julia_performance.png",
+          "title": "Высокопроизводительные вычисления в Julia"
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "title": "Haskell: Функциональное программирование в действии",
+      "subtitle": "Как Haskell меняет подход к решению задач",
+      "img": "https://example.com/images/haskell_logo.png",
+      "createdAt": "14.01.2026",
+      "userId": "1",
+      "views": 1357,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Функциональное программирование",
+          "paragraphs": [
+            "Haskell — это чисто функциональный язык программирования, основанный на принципах математической логики и теории категорий."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "greet :: String -> IO ()\ngreet name = putStrLn $ \"Hello, \" ++ name ++ \"!\""
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Благодаря строгому контролю типов и отсутствию побочных эффектов, Haskell обеспечивает высокий уровень надежности и предсказуемости кода."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/haskell_functional_programming.png",
+          "title": "Функциональное программирование в Haskell"
+        }
+      ]
+    },
+    {
+      "id": "12",
+      "title": "Ruby: Простота и элегантность",
+      "subtitle": "Почему Ruby остается популярным среди веб-разработчиков",
+      "img": "https://example.com/images/ruby_logo.png",
+      "createdAt": "28.02.2026",
+      "userId": "1",
+      "views": 3698,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "История Ruby",
+          "paragraphs": [
+            "Ruby был создан Юкихиро Мацумото в середине 1990-х годов с целью создать язык, который бы сочетал простоту и мощь."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "puts \"Hello, World!\""
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Элегантный синтаксис и богатая экосистема библиотек, включая популярный фреймворк Rails, делают Ruby отличным выбором для быстрой разработки веб-приложений."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/ruby_elegant_code.png",
+          "title": "Элегантный код на Ruby"
+        }
+      ]
+    },
+    {
+      "id": "13",
+      "title": "Dart: Современный язык для Flutter-разработки",
+      "subtitle": "Преимущества Dart в создании кросс-платформенных приложений",
+      "img": "https://example.com/images/dart_logo.png",
+      "createdAt": "18.03.2026",
+      "userId": "1",
+      "views": 7410,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Flutter и Dart",
+          "paragraphs": [
+            "Dart был создан Google в 2011 году и получил широкую известность благодаря использованию в рамках фреймворка Flutter для разработки мобильных приложений."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "void main() {\n  print('Hello, World!');\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Dart сочетает в себе сильные стороны объектно-ориентированного и функционального программирования, обеспечивая высокую производительность и удобство разработки."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/dart_flutter_app.png",
+          "title": "Кросс-платформенное приложение на Dart"
+        }
+      ]
+    },
+    {
+      "id": "14",
+      "title": "Scala: Объединение лучших черт ООП и ФП",
+      "subtitle": "Как Scala улучшает процесс разработки корпоративных приложений",
+      "img": "https://example.com/images/scala_logo.png",
+      "createdAt": "27.04.2026",
+      "userId": "1",
+      "views": 5281,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Объектно-функциональное программирование",
+          "paragraphs": [
+            "Scala — это современный язык программирования, сочетающий принципы объектно-ориентированного и функционального программирования."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "object HelloWorld {\n  def main(args: Array[String]): Unit =\n    println(\"Hello, World!\")\n}"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Scala особенно популярна в корпоративной среде благодаря своей интеграции с JVM и поддержке сложных архитектурных решений."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/scala_corporate_applications.png",
+          "title": "Корпоративные приложения на Scala"
+        }
+      ]
+    },
+    {
+      "id": "15",
+      "title": "Elixir: Масштабируемость и надежность",
+      "subtitle": "Как Elixir справляется с высокими нагрузками в реальном времени",
+      "img": "https://example.com/images/elixir_logo.png",
+      "createdAt": "16.05.2026",
+      "userId": "1",
+      "views": 6123,
+      "type": [
+        "IT"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Масштабируемые системы",
+          "paragraphs": [
+            "Elixir — это функциональный язык программирования, построенный поверх виртуальной машины Erlang, известной своей надежностью и способностью справляться с высокими нагрузками."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "CODE",
+          "code": "IO.puts \"Hello, World!\""
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Благодаря своим возможностям параллельного выполнения процессов и устойчивости к сбоям, Elixir идеально подходит для разработки высоконагруженных систем реального времени."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "IMAGE",
+          "src": "https://example.com/images/elixir_scalability.png",
+          "title": "Масштабируемость Elixir"
+        }
+      ]
     }
   ],
   "comments": [
