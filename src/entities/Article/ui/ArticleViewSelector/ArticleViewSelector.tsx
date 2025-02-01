@@ -28,16 +28,14 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     return (
         <div className={classNames(cls.ArticleViewSelector, {}, [className])}>
             {viewTypes.map((viewType) => (
-                // eslint-disable-next-line react/jsx-key
                 <Button
+                    key={viewType.view}
                     theme={ButtonVariant.CLEAR}
                     onClick={onClick(viewType.view)}
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={
-                            classNames('', { [cls.selected]: viewType.view === view })
-                        }
+                        className={classNames('', { [cls.selected]: viewType.view === view })}
                     />
                 </Button>
             ))}

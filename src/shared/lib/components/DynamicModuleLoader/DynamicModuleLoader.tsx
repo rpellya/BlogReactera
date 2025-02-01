@@ -30,9 +30,14 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
 
     // Code spliting (Optimes build for prod)
     useEffect(() => {
+        const mountedReducers = store.reducerManager.getReducerMap();
         Object.entries(reducers).forEach(([name, reducer]) => {
-            store.reducerManager.add(name as StateSchemaKey, reducer);
-            dispatch({ type: `@INIT ${name} reducer` }); // for devtools
+            const mountedReducer = mountedReducers[name as StateSchemaKey];
+            // Add a new reducer only if it is not
+            if (!mountedReducer) {
+                store.reducerManager.add(name as StateSchemaKey, reducer);
+                dispatch({ type: `@INIT ${name} reducer` }); // for devtools
+            }
         });
 
         return () => {
