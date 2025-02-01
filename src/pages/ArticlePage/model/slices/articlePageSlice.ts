@@ -29,6 +29,7 @@ export const articlePageSlice = createSlice({
         view: ArticleView.TILE,
         page: 1,
         hasMore: true,
+        _inited: false,
     }),
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
@@ -42,6 +43,7 @@ export const articlePageSlice = createSlice({
             const view = localStorage.getItem('articles_view') as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.LIST ? 4 : 9;
+            state._inited = true;
         },
     },
     // extraReducers - redusers with business logic for async thunk that can have anything in it
