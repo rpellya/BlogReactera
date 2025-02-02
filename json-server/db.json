@@ -240,7 +240,7 @@
       "id": "4",
       "title": "Rust: Безопасность памяти без сборщика мусора",
       "subtitle": "Как Rust решает проблемы безопасности памяти",
-      "img": "https://example.com/images/rust_logo.png",
+      "img": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/a93/ad8/8b7/a93ad88b735a95d351f5d783dcf031de.png",
       "createdAt": "30.04.2025",
       "userId": "1",
       "views": 8910,
@@ -280,7 +280,7 @@
       "id": "5",
       "title": "Go: Простота и производительность",
       "subtitle": "Почему Go стал популярным языком для разработки серверных приложений",
-      "img": "https://example.com/images/go_logo.png",
+      "img": "https://habrastorage.org/webt/9j/pq/wo/9jpqwo-unymmjaiylv0ooboa9se.png",
       "createdAt": "05.06.2025",
       "userId": "1",
       "views": 2345,
@@ -320,7 +320,7 @@
       "id": "6",
       "title": "Swift: Язык будущего для iOS-разработки",
       "subtitle": "Новые возможности Swift 6 и их влияние на разработку мобильных приложений",
-      "img": "https://example.com/images/swift_logo.png",
+      "img": "https://habrastorage.org/r/w780/getpro/habr/upload_files/1ba/cfb/288/1bacfb2889279d43eaab3cda15bafae2.jpg",
       "createdAt": "12.08.2025",
       "userId": "1",
       "views": 6789,
@@ -360,7 +360,7 @@
       "id": "7",
       "title": "C++: Современные подходы к программированию",
       "subtitle": "Как C++ эволюционирует и адаптируется к новым требованиям индустрии",
-      "img": "https://example.com/images/cpp_logo.png",
+      "img": "https://d8it4huxumps7.cloudfront.net/uploads/images/65954eb33396f_what_is_c_02.jpg?d=2000x2000",
       "createdAt": "25.09.2025",
       "userId": "1",
       "views": 1011,
@@ -400,7 +400,7 @@
       "id": "8",
       "title": "JavaScript: Новые возможности ES2025",
       "subtitle": "Что ждет нас в будущем стандарта JavaScript",
-      "img": "https://example.com/images/javascript_logo.png",
+      "img": "https://miro.medium.com/v2/resize:fit:720/format:webp/1*wf5X21iwgrRR1mnWuPp7WA.png",
       "createdAt": "15.10.2025",
       "userId": "1",
       "views": 4321,
@@ -440,7 +440,7 @@
       "id": "9",
       "title": "R: Анализ данных и машинное обучение",
       "subtitle": "Как R помогает исследователям и аналитикам решать сложные задачи",
-      "img": "https://example.com/images/r_logo.png",
+      "img": "https://www.i2tutorials.com/wp-content/media/2020/05/R-PROGRAMMING-LANGUAGE-i2tutorials.jpg",
       "createdAt": "22.11.2025",
       "userId": "1",
       "views": 9876,
@@ -480,7 +480,7 @@
       "id": "10",
       "title": "Julia: Высокопроизводительные научные вычисления",
       "subtitle": "Почему Julia стала популярной среди ученых и инженеров",
-      "img": "https://example.com/images/julia_logo.png",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Julia_Programming_Language_Logo.svg/124px-Julia_Programming_Language_Logo.svg.png",
       "createdAt": "03.12.2025",
       "userId": "1",
       "views": 2468,
@@ -520,7 +520,7 @@
       "id": "11",
       "title": "Haskell: Функциональное программирование в действии",
       "subtitle": "Как Haskell меняет подход к решению задач",
-      "img": "https://example.com/images/haskell_logo.png",
+      "img": "https://www.haskell.org/img/haskell-logo.svg",
       "createdAt": "14.01.2026",
       "userId": "1",
       "views": 1357,
@@ -560,7 +560,7 @@
       "id": "12",
       "title": "Ruby: Простота и элегантность",
       "subtitle": "Почему Ruby остается популярным среди веб-разработчиков",
-      "img": "https://example.com/images/ruby_logo.png",
+      "img": "https://www.devopsschool.com/blog/wp-content/uploads/2022/03/eb9e3b7dab09358e7cf13f188f64f9f4-1024x530.png",
       "createdAt": "28.02.2026",
       "userId": "1",
       "views": 3698,
@@ -600,8 +600,8 @@
       "id": "13",
       "title": "Dart: Современный язык для Flutter-разработки",
       "subtitle": "Преимущества Dart в создании кросс-платформенных приложений",
-      "img": "https://example.com/images/dart_logo.png",
-      "createdAt": "18.03.2026",
+      "img": "https://sourcebae.com/blog/wp-content/uploads/2023/08/dart-logo-for-shares-2048x1150.png",
+      "createdAt": "18.03.2024",
       "userId": "1",
       "views": 7410,
       "type": [
@@ -640,8 +640,8 @@
       "id": "14",
       "title": "Scala: Объединение лучших черт ООП и ФП",
       "subtitle": "Как Scala улучшает процесс разработки корпоративных приложений",
-      "img": "https://example.com/images/scala_logo.png",
-      "createdAt": "27.04.2026",
+      "img": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/4fc/690/d4e/4fc690d4e1a5fbb2ed2a7010be049d85.png",
+      "createdAt": "27.04.2024",
       "userId": "1",
       "views": 5281,
       "type": [
@@ -680,8 +680,8 @@
       "id": "15",
       "title": "Elixir: Масштабируемость и надежность",
       "subtitle": "Как Elixir справляется с высокими нагрузками в реальном времени",
-      "img": "https://example.com/images/elixir_logo.png",
-      "createdAt": "16.05.2026",
+      "img": "https://habrastorage.org/r/w1560/getpro/habr/upload_files/977/eaf/0f0/977eaf0f0d523cc8c2c8faa040a68d41.png",
+      "createdAt": "16.05.2024",
       "userId": "1",
       "views": 6123,
       "type": [
@@ -713,6 +713,86 @@
           "type": "IMAGE",
           "src": "https://example.com/images/elixir_scalability.png",
           "title": "Масштабируемость Elixir"
+        }
+      ]
+    },
+    {
+      "id": "16",
+      "title": "Квантовые вычисления: революция в мире технологий",
+      "subtitle": "Как квантовые компьютеры могут изменить индустрию IT",
+      "img": "https://www.itweek.ru/upload/iblock/5c8/cxkdibx4rctf6bovqv5jdybm28rnt6oe.jpg",
+      "createdAt": "10.06.2024",
+      "userId": "1",
+      "views": 8145,
+      "type": [
+        "SCIENCE"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Что такое квантовые вычисления?",
+          "paragraphs": [
+            "Квантовые компьютеры используют принципы квантовой механики, такие как суперпозиция и запутанность, чтобы выполнять вычисления значительно быстрее, чем традиционные машины."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/webt/zy/x1/qm/zyx1qm9876.jpeg",
+          "title": "Схема квантового процессора"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Компании, такие как Google, IBM и D-Wave, уже работают над созданием квантовых процессоров, которые могут решать задачи, недоступные классическим суперкомпьютерам."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "quantum_register = QuantumRegister(2)\ncircuit = QuantumCircuit(quantum_register)\ncircuit.h(0)\ncircuit.cx(0, 1)"
+        }
+      ]
+    },
+    {
+      "id": "17",
+      "title": "Финансовые технологии: как AI меняет экономику",
+      "subtitle": "Роль искусственного интеллекта в финтехе",
+      "img": "https://habrastorage.org/files/83e/ade/a0e/83eadea0ec3d4d0fb0897a3a71dbaa17.JPG",
+      "createdAt": "22.07.2024",
+      "userId": "1",
+      "views": 6723,
+      "type": [
+        "ECONOMICS"
+      ],
+      "blocks": [
+        {
+          "id": "1",
+          "type": "TEXT",
+          "title": "Автоматизированные инвестиции",
+          "paragraphs": [
+            "Искусственный интеллект используется для предсказания движения фондового рынка, автоматической торговли и управления инвестиционными портфелями."
+          ]
+        },
+        {
+          "id": "2",
+          "type": "IMAGE",
+          "src": "https://habrastorage.org/webt/lo/ji/yt/lojiyt5432.jpeg",
+          "title": "AI в инвестициях"
+        },
+        {
+          "id": "3",
+          "type": "TEXT",
+          "paragraphs": [
+            "Робо-эдвайзеры, такие как Betterment и Wealthfront, анализируют финансовые данные и автоматически составляют оптимальные инвестиционные стратегии."
+          ]
+        },
+        {
+          "id": "4",
+          "type": "CODE",
+          "code": "import pandas as pd\nfrom sklearn.ensemble import RandomForestRegressor\n\ndata = pd.read_csv('stock_data.csv')\nmodel = RandomForestRegressor().fit(data[['open', 'high', 'low']], data['close'])"
         }
       ]
     }
@@ -813,9 +893,9 @@
       "id": "1",
       "firstname": "Roman",
       "lastname": "Pellya",
-      "age": 22,
+      "age": 20,
       "currency": "EUR",
-      "country": "Russia",
+      "country": "Finland",
       "city": "Saint-P.",
       "username": "admin",
       "avatar": "https://avatars.githubusercontent.com/u/103450915?v=4"
