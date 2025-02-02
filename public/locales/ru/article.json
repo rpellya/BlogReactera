@@ -9,5 +9,10 @@
   "title": "названию",
   "views": "просмотрам",
   "ascending": "возрастанию",
-  "descending": "убыванию"
+  "descending": "убыванию",
+  "All articles": "Все статьи",
+  "IT": "IT",
+  "Economics": "Экономика",
+  "Science": "Наука",
+  "Articles not found": "Статьи не найдены"
 }

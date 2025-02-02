@@ -9,5 +9,10 @@
   "title": "title",
   "views": "views",
   "ascending": "ascending",
-  "descending": "descending"
+  "descending": "descending",
+  "All articles": "All articles",
+  "IT": "IT",
+  "Economics": "Economic",
+  "Science": "Science",
+  "Articles not found": "Articles not found"
 }

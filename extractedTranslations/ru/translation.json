@@ -1,16 +1,20 @@
 {
   "About us": "About us",
+  "All": "All",
+  "All articles": "All articles",
   "An error occurred while loading the article": "An error occurred while loading the article",
   "An unforeseen mistake occurred": "An unforeseen mistake occurred",
   "Article Details": "Article Details",
   "Article details": "Article details",
   "Article page": "Article page",
+  "Articles not found": "Articles not found",
   "Auth form": "Auth form",
   "Back to list": "Back to list",
   "Cancel": "Cancel",
   "City": "City",
   "Comments": "Comments",
   "Decrement": "Decrement",
+  "Economics": "Economics",
   "Edit": "Edit",
   "Enter link to avatar": "Enter link to avatar",
   "Enter link to username": "Enter link to username",
@@ -18,6 +22,7 @@
   "Enter the comment": "Enter the comment",
   "Enter username": "Enter username",
   "Error": "Error",
+  "IT": "IT",
   "Increment": "Increment",
   "Loading": {
     "": {
@@ -35,6 +40,7 @@
   "Read more": "Read more",
   "Refresh the page": "Refresh the page",
   "Save": "Save",
+  "Science": "Science",
   "Search": "Search",
   "Select country": "Select country",
   "Select currency": "Select currency",
@@ -67,5 +73,6 @@
   "title": "title",
   "views": "views",
   "Произошла ошибка при загрузке статье": "Произошла ошибка при загрузке статье",
-  "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи"
+  "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи",
+  "Статьи не найдены": "Статьи не найдены"
 }
