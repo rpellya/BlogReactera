@@ -14,12 +14,16 @@ describe('getProfileValidateErrors.test', () => {
             profile: { validateErrors },
         };
 
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(validateErrors);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            validateErrors,
+        );
     });
 
     test('should wotk with emty state', () => {
         const state: DeepPartial<StateSchema> = {};
 
-        expect(getProfileValidateErrors(state as StateSchema)).toEqual(undefined);
+        expect(getProfileValidateErrors(state as StateSchema)).toEqual(
+            undefined,
+        );
     });
 });

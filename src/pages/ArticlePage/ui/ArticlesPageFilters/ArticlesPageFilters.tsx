@@ -48,34 +48,49 @@ export const ArticlesPageFilters = memo((props: ArticlesPageFiltersProps) => {
 
     const debouncedFetchData = useDebounce(fetchData, 500);
 
-    const onChangeView = useCallback((newView: ArticleView) => {
-        dispatch(articlesPageAction.setView(newView));
-        dispatch(articlesPageAction.setPage(1));
-    }, [dispatch]);
+    const onChangeView = useCallback(
+        (newView: ArticleView) => {
+            dispatch(articlesPageAction.setView(newView));
+            dispatch(articlesPageAction.setPage(1));
+        },
+        [dispatch],
+    );
 
-    const onChangeSort = useCallback((newSort: ArticleSortField) => {
-        dispatch(articlesPageAction.setSort(newSort));
-        dispatch(articlesPageAction.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeSort = useCallback(
+        (newSort: ArticleSortField) => {
+            dispatch(articlesPageAction.setSort(newSort));
+            dispatch(articlesPageAction.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-    const onChangeOrder = useCallback((newOrder: SortOrder) => {
-        dispatch(articlesPageAction.setOrder(newOrder));
-        dispatch(articlesPageAction.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeOrder = useCallback(
+        (newOrder: SortOrder) => {
+            dispatch(articlesPageAction.setOrder(newOrder));
+            dispatch(articlesPageAction.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
-    const onChangeSearch = useCallback((newSearch: string) => {
-        dispatch(articlesPageAction.setSearch(newSearch));
-        dispatch(articlesPageAction.setPage(1));
-        debouncedFetchData();
-    }, [dispatch, debouncedFetchData]);
+    const onChangeSearch = useCallback(
+        (newSearch: string) => {
+            dispatch(articlesPageAction.setSearch(newSearch));
+            dispatch(articlesPageAction.setPage(1));
+            debouncedFetchData();
+        },
+        [dispatch, debouncedFetchData],
+    );
 
-    const onChangeType = useCallback((value: ArticleType) => {
-        dispatch(articlesPageAction.setType(value));
-        dispatch(articlesPageAction.setPage(1));
-        fetchData();
-    }, [dispatch, fetchData]);
+    const onChangeType = useCallback(
+        (value: ArticleType) => {
+            dispatch(articlesPageAction.setType(value));
+            dispatch(articlesPageAction.setPage(1));
+            fetchData();
+        },
+        [dispatch, fetchData],
+    );
 
     return (
         <div className={classNames(cls.ArticlesPageFilters, {}, [className])}>

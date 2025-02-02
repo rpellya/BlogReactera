@@ -7,7 +7,10 @@ describe('addQueryParams.test', () => {
     });
 
     test('test with two params', () => {
-        const params = getQueryParams({ test: 'testValue', test2: 'testValue2' });
+        const params = getQueryParams({
+            test: 'testValue',
+            test2: 'testValue2',
+        });
         expect(params).toEqual('?test=testValue&test2=testValue2');
     });
 

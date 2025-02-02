@@ -1,9 +1,9 @@
 {
-  "The article was not found": "Статья не найдена",
-  "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
-  "Article details": "Информация о статье",
-  "Comments": "Комментарии",
-  "Enter the comment": "Введите комментарий",
-  "Send comment": "Отправить комментарий",
-  "Back to list": "Назад к списку"
+    "The article was not found": "Статья не найдена",
+    "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
+    "Article details": "Информация о статье",
+    "Comments": "Комментарии",
+    "Enter the comment": "Введите комментарий",
+    "Send comment": "Отправить комментарий",
+    "Back to list": "Назад к списку"
 }

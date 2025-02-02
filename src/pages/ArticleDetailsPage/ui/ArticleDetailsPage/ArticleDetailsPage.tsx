@@ -16,18 +16,14 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
-import {
-    fetchCommentsByArticleId,
-} from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
+import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import {
     articleDetailsCommentsReducer,
     getArticleComments,
 } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
-import {
-    addCommentForArticle,
-} from '../../model/services/addCommentForArticle/addCommentForArticle';
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -50,15 +46,20 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         navigate(RoutePath.articles);
     }, [navigate]);
 
-    const onSendComment = useCallback((text: string) => {
-        dispatch(addCommentForArticle(text));
-    }, [dispatch]);
+    const onSendComment = useCallback(
+        (text: string) => {
+            dispatch(addCommentForArticle(text));
+        },
+        [dispatch],
+    );
 
     useInitialEffect(() => dispatch(fetchCommentsByArticleId(id)));
 
     if (!id) {
         return (
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 {t('The article was not found')}
             </Page>
         );
@@ -70,14 +71,19 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <>
                 <Text className={cls.commentTitle} title={t('Comments')} />
                 <AddCommentForm onSendComment={onSendComment} />
-                <CommentList isLoading={commentsIsLoading} comments={comments} />
+                <CommentList
+                    isLoading={commentsIsLoading}
+                    comments={comments}
+                />
             </>
         );
     }
 
     return (
         <DynamicModuleLoader reducers={reducers}>
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className])}>
+            <Page
+                className={classNames(cls.ArticleDetailsPage, {}, [className])}
+            >
                 <Button theme={ButtonVariant.OUTLINE} onClick={onBackToList}>
                     {t('Back to list')}
                 </Button>

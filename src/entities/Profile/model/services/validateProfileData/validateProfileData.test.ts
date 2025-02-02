@@ -21,24 +21,22 @@ describe('validateProfileData.test', () => {
     });
 
     test('Without first and last name data', async () => {
-        const result = validateProfileData({ ...data, firstname: '', lastname: '' });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA,
-        ]);
+        const result = validateProfileData({
+            ...data,
+            firstname: '',
+            lastname: '',
+        });
+        expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA]);
     });
 
     test('Incorrect age data', async () => {
         const result = validateProfileData({ ...data, age: undefined });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_AGE,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_AGE]);
     });
 
     test('Incorrect country data', async () => {
         const result = validateProfileData({ ...data, country: undefined });
-        expect(result).toEqual([
-            ValidateProfileError.INCORRECT_COUNTRY,
-        ]);
+        expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY]);
     });
 
     test('Incorrect all data', async () => {

@@ -15,7 +15,10 @@ export const scrollSaveSlice = createSlice({
     name: 'scrollSaveSlice',
     initialState,
     reducers: {
-        setScrollPosition(state, { payload }: PayloadAction<{ path: string, position: number }>) {
+        setScrollPosition(
+            state,
+            { payload }: PayloadAction<{ path: string; position: number }>,
+        ) {
             state.scroll[payload.path] = payload.position; // for example { 'articles': 500 }
         },
     },

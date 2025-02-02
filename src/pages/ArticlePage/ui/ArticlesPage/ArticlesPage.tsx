@@ -15,9 +15,7 @@ import {
     getArticlesPageIsLoading,
     getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import {
-    fetchNextArticlesPage,
-} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import {
     articlesPageReducer,
     getArticles,

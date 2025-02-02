@@ -11,7 +11,10 @@ import { useNavigate } from 'react-router-dom';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './ArticleListItem.module.scss';
 import {
-    Article, ArticleBlockType, ArticleTextBlock, ArticleView,
+    Article,
+    ArticleBlockType,
+    ArticleTextBlock,
+    ArticleView,
 } from '../../model/types/article';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 
@@ -31,7 +34,9 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
     }, [article.id, navigate]);
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
-    const image = <img src={article.img} alt={article.title} className={cls.img} />;
+    const image = (
+        <img src={article.img} alt={article.title} className={cls.img} />
+    );
     const views = (
         <div className={cls.viewsBlock}>
             <Text text={String(article.views)} className={cls.views} />
@@ -64,7 +69,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
             <Card className={cls.card}>
                 <div className={cls.header}>
                     <Avatar size={30} src={article.user.avatar} />
-                    <Text text={article.user.username} className={cls.username} />
+                    <Text
+                        text={article.user.username}
+                        className={cls.username}
+                    />
                     <Text text={article.createdAt} className={cls.date} />
                 </div>
                 <Text text={article.title} className={cls.title} />
@@ -77,7 +85,10 @@ export const ArticleListItem = (props: ArticleListItemProps) => {
                     />
                 )}
                 <div className={cls.footer}>
-                    <Button onClick={onOpenArticle} theme={ButtonVariant.OUTLINE}>
+                    <Button
+                        onClick={onOpenArticle}
+                        theme={ButtonVariant.OUTLINE}
+                    >
                         {t('Read more')}
                     </Button>
                     {views}

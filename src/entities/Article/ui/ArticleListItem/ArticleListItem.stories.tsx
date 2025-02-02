@@ -14,7 +14,9 @@ export default {
     },
 } as ComponentMeta<typeof ArticleListItem>;
 
-const Template: ComponentStory<typeof ArticleListItem> = (args) => <ArticleListItem {...args} />;
+const Template: ComponentStory<typeof ArticleListItem> = (args) => (
+    <ArticleListItem {...args} />
+);
 
 export const Tile = Template.bind({});
 Tile.args = {

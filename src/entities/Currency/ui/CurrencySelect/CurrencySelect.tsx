@@ -26,11 +26,14 @@ export const CurrencySelect = ({
 }: CurrencySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        if (onChange) {
-            onChange(value as Currency);
-        }
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            if (onChange) {
+                onChange(value as Currency);
+            }
+        },
+        [onChange],
+    );
 
     return (
         <Select

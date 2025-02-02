@@ -4,10 +4,13 @@ export interface UseInfiniteScrollProps {
     callback?: () => void; // crossed one or another element
     triggerRef: MutableRefObject<HTMLElement>; // crossed the element and call the callback function
     wrapperRef: MutableRefObject<HTMLElement>; // inside which is scrolling
-
 }
 
-export function useInfiniteScroll({ callback, triggerRef, wrapperRef }: UseInfiniteScrollProps) {
+export function useInfiniteScroll({
+    callback,
+    triggerRef,
+    wrapperRef,
+}: UseInfiniteScrollProps) {
     useEffect(() => {
         let observer: IntersectionObserver | null = null;
         const wrapperElement = wrapperRef.current;

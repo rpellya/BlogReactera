@@ -13,16 +13,14 @@ export default {
     },
 } as ComponentMeta<typeof ArticleSortSelector>;
 
-const Template: ComponentStory<typeof ArticleSortSelector> = (
-    args,
-) => <ArticleSortSelector {...args} />;
+const Template: ComponentStory<typeof ArticleSortSelector> = (args) => (
+    <ArticleSortSelector {...args} />
+);
 
 export const Normal = Template.bind({});
-Normal.args = {
-};
+Normal.args = {};
 Normal.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
-Dark.args = {
-};
+Dark.args = {};
 Dark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];

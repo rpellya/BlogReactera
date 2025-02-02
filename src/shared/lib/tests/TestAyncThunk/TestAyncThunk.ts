@@ -2,8 +2,9 @@ import { AsyncThunkAction } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import axios, { AxiosStatic } from 'axios';
 
-type AcrionCreatorType<Return, Arg, RejectedValue> =
-    (arg: Arg) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>
+type AcrionCreatorType<Return, Arg, RejectedValue> = (
+    arg: Arg,
+) => AsyncThunkAction<Return, Arg, { rejectValue: RejectedValue }>;
 
 jest.mock('axios');
 
@@ -44,14 +45,13 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
      * Function for caling - for don't to mocked
      * @param arg
      * @returns async action - the wrapper that at the redux middleware level takes and throws it off dispatch, getSate and some extra arg
-    */
+     */
     async callThunk(arg: Arg) {
         const action = this.actionCreator(arg); // value
-        const result = await action(
-            this.dispatch,
-            this.getState,
-            { api: this.api, navigate: this.navigate },
-        );
+        const result = await action(this.dispatch, this.getState, {
+            api: this.api,
+            navigate: this.navigate,
+        });
 
         return result;
     }

@@ -8,7 +8,7 @@ import { RouteProps } from 'react-router-dom';
 
 export type AppRoutesProps = RouteProps & {
     authOnly?: boolean;
-}
+};
 
 export enum AppRoutes {
     MAIN = 'main',
@@ -18,7 +18,7 @@ export enum AppRoutes {
     ARTICLE_DETAILS = 'article_details',
 
     // last
-    NOT_FOUND = 'not_found'
+    NOT_FOUND = 'not_found',
 }
 
 export const RoutePath: Record<AppRoutes, string> = {

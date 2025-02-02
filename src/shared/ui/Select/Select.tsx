@@ -1,7 +1,5 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
-import {
-    ChangeEvent, memo, useCallback, useMemo,
-} from 'react';
+import { ChangeEvent, memo, useCallback, useMemo } from 'react';
 import cls from './Select.module.scss';
 
 export interface SelectOptions<T extends string = string> {
@@ -21,31 +19,28 @@ interface ISelectProps<T extends string> {
 const typedMemo: <T>(c: T) => T = memo;
 
 export const Select = typedMemo(<T extends string>(props: ISelectProps<T>) => {
-    const {
-        className,
-        label,
-        options,
-        value,
-        onChange,
-        readonly,
-    } = props;
+    const { className, label, options, value, onChange, readonly } = props;
 
-    const onChangeHanlder = useCallback((event: ChangeEvent<HTMLSelectElement>) => {
-        if (onChange) {
-            onChange(event.target.value as T);
-        }
-    }, [onChange]);
+    const onChangeHanlder = useCallback(
+        (event: ChangeEvent<HTMLSelectElement>) => {
+            if (onChange) {
+                onChange(event.target.value as T);
+            }
+        },
+        [onChange],
+    );
 
     const optionsList = useMemo(
-        () => options.map((option) => (
-            <option
-                className={cls.option}
-                value={option.value}
-                key={option.value}
-            >
-                {option.label}
-            </option>
-        )),
+        () =>
+            options.map((option) => (
+                <option
+                    className={cls.option}
+                    value={option.value}
+                    key={option.value}
+                >
+                    {option.label}
+                </option>
+            )),
         [options],
     );
 
@@ -55,8 +50,7 @@ export const Select = typedMemo(<T extends string>(props: ISelectProps<T>) => {
 
     return (
         <div className={classNames(cls.selectWrapper, mods, [className])}>
-            {label
-                && <span className={cls.label}>{`${label} >`}</span>}
+            {label && <span className={cls.label}>{`${label} >`}</span>}
             <select
                 disabled={readonly}
                 value={value}

@@ -15,55 +15,65 @@ export default {
     },
 } as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => (
+    <ProfilePage {...args} />
+);
 
 export const Light = Template.bind({});
 Light.args = {};
-Light.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'Roman',
-            lastname: 'Pellya',
-            age: 20,
-            currency: Currency.EUR,
-            country: Country.Russia,
-            city: 'Saint-P.',
-            username: 'admin',
-            avatar,
+Light.decorators = [
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'Roman',
+                lastname: 'Pellya',
+                age: 20,
+                currency: Currency.EUR,
+                country: Country.Russia,
+                city: 'Saint-P.',
+                username: 'admin',
+                avatar,
+            },
         },
-    },
-})];
+    }),
+];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'Roman',
-            lastname: 'Pellya',
-            age: 20,
-            currency: Currency.EUR,
-            country: Country.Russia,
-            city: 'Saint-P.',
-            username: 'admin',
-            avatar,
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'Roman',
+                lastname: 'Pellya',
+                age: 20,
+                currency: Currency.EUR,
+                country: Country.Russia,
+                city: 'Saint-P.',
+                username: 'admin',
+                avatar,
+            },
         },
-    },
-})];
+    }),
+];
 
 export const Blue = Template.bind({});
 Blue.args = {};
-Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'Roman',
-            lastname: 'Pellya',
-            age: 20,
-            currency: Currency.EUR,
-            country: Country.Russia,
-            city: 'Saint-P.',
-            username: 'admin',
-            avatar,
+Blue.decorators = [
+    ThemeDecorator(Theme.BLUE),
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'Roman',
+                lastname: 'Pellya',
+                age: 20,
+                currency: Currency.EUR,
+                country: Country.Russia,
+                city: 'Saint-P.',
+                username: 'admin',
+                avatar,
+            },
         },
-    },
-})];
+    }),
+];

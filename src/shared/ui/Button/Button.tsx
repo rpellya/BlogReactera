@@ -8,7 +8,7 @@ export enum ButtonVariant {
     OUTLINE = 'outline',
     OUTLINE_RED = 'outline_red',
     BACKGOUND = 'background',
-    BACKGOUND_INVERTED = 'backgroundInverted'
+    BACKGOUND_INVERTED = 'backgroundInverted',
 }
 
 export enum ButtonSize {
@@ -20,10 +20,10 @@ export enum ButtonSize {
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
     theme?: ButtonVariant;
-    square?: boolean,
-    size?: ButtonSize,
-    disabled?: boolean,
-    children?: ReactNode
+    square?: boolean;
+    size?: ButtonSize;
+    disabled?: boolean;
+    children?: ReactNode;
 }
 
 /**

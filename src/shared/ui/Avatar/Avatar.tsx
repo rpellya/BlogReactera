@@ -9,16 +9,14 @@ interface AvatarProps {
     alt?: string;
 }
 
-export const Avatar = ({
-    alt,
-    className,
-    src,
-    size,
-}: AvatarProps) => {
-    const styles = useMemo<CSSProperties>(() => ({
-        width: size || 80,
-        height: size || 80,
-    }), [size]);
+export const Avatar = ({ alt, className, src, size }: AvatarProps) => {
+    const styles = useMemo<CSSProperties>(
+        () => ({
+            width: size || 80,
+            height: size || 80,
+        }),
+        [size],
+    );
 
     return (
         <img

@@ -25,40 +25,45 @@ const reducerList = {
     addCommentForm: addCommentFormReducer,
 };
 
-const AddCommentForm = memo(({ className, onSendComment }: AddCommentFormProps) => {
-    const { t } = useTranslation('article-details');
-    const text = useSelector(getAddCommentFormText);
-    const error = useSelector(getAddCommentFormError);
-    const dispatch = useAppDispatch();
+const AddCommentForm = memo(
+    ({ className, onSendComment }: AddCommentFormProps) => {
+        const { t } = useTranslation('article-details');
+        const text = useSelector(getAddCommentFormText);
+        const error = useSelector(getAddCommentFormError);
+        const dispatch = useAppDispatch();
 
-    const onCommentTextChange = useCallback((value: string) => {
-        dispatch(addCommentFormActions.setText(value));
-    }, [dispatch]);
+        const onCommentTextChange = useCallback(
+            (value: string) => {
+                dispatch(addCommentFormActions.setText(value));
+            },
+            [dispatch],
+        );
 
-    const onSendHandler = useCallback(() => {
-        onSendComment(text || '');
-        onCommentTextChange('');
-    }, [onCommentTextChange, onSendComment, text]);
+        const onSendHandler = useCallback(() => {
+            onSendComment(text || '');
+            onCommentTextChange('');
+        }, [onCommentTextChange, onSendComment, text]);
 
-    if (error) {
-        return <div>{error}</div>;
-    }
+        if (error) {
+            return <div>{error}</div>;
+        }
 
-    return (
-        <DynamicModuleLoader reducers={reducerList}>
-            <div className={classNames(cls.AddCommentForm, {}, [className])}>
-                <Input
-                    className={cls.input}
-                    value={text}
-                    onChange={onCommentTextChange}
-                    placeholder={t('Enter the comment')}
-                />
-                <Button onClick={onSendHandler}>
-                    {t('Send comment')}
-                </Button>
-            </div>
-        </DynamicModuleLoader>
-    );
-});
+        return (
+            <DynamicModuleLoader reducers={reducerList}>
+                <div
+                    className={classNames(cls.AddCommentForm, {}, [className])}
+                >
+                    <Input
+                        className={cls.input}
+                        value={text}
+                        onChange={onCommentTextChange}
+                        placeholder={t('Enter the comment')}
+                    />
+                    <Button onClick={onSendHandler}>{t('Send comment')}</Button>
+                </div>
+            </DynamicModuleLoader>
+        );
+    },
+);
 
 export default AddCommentForm;
