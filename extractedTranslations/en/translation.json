@@ -35,9 +35,11 @@
   "Read more": "Read more",
   "Refresh the page": "Refresh the page",
   "Save": "Save",
+  "Search": "Search",
   "Select country": "Select country",
   "Select currency": "",
   "Send comment": "Send comment",
+  "Sort by": "Sort by",
   "The article is not fined": "The article is not fined",
   "The article is not founed": "The article is not founed",
   "The article was not found": "The article was not found",
@@ -48,6 +50,10 @@
   "Your age": "Your age",
   "Your lastname": "Your lastname",
   "Your name": "Your name",
+  "ascending": "ascending",
+  "by": "by",
+  "created at": "created at",
+  "descending": "descending",
   "errors": {
     "incorrectAge": "incorrectAge",
     "incorrectCountry": "incorrectCountry",
@@ -55,7 +61,11 @@
     "noData": "noData",
     "serverError": "serverError"
   },
+  "increasing": "increasing",
+  "name": "name",
   "throw error": "throw error",
+  "title": "title",
+  "views": "views",
   "Произошла ошибка при загрузке статье": "Произошла ошибка при загрузке статье",
   "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи"
 }

@@ -17,9 +17,7 @@ export const initArticlesPage = createAsyncThunk<
         // If we have not yet state is initialize, then we initialize it and call fetCharticleSlist
         if (!inited) {
             dispatch(articlesPageAction.initState());
-            dispatch(fetchArticlesList({
-                page: 1,
-            }));
+            dispatch(fetchArticlesList({}));
         }
     },
 );
