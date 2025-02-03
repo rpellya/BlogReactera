@@ -11,7 +11,7 @@ export enum AppLinkTheme {
 interface AppLinkProps extends LinkProps {
     className?: string;
     theme?: AppLinkTheme;
-    children?: ReactNode
+    children?: ReactNode;
 }
 /**
  * AppLink component - with memo, because children is string on 99%

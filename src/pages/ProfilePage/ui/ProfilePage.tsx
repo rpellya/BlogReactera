@@ -48,7 +48,9 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
     const validateErrorTranslates = {
         [ValidateProfileError.INCORRECT_AGE]: t('errors.incorrectAge'),
         [ValidateProfileError.INCORRECT_COUNTRY]: t('errors.incorrectCountry'),
-        [ValidateProfileError.INCORRECT_USER_DATA]: t('errors.incorrectUserData'),
+        [ValidateProfileError.INCORRECT_USER_DATA]: t(
+            'errors.incorrectUserData',
+        ),
         [ValidateProfileError.NO_DATA]: t('errors.noData'),
         [ValidateProfileError.SERVER_ERROR]: t('errors.serverError'),
     };
@@ -59,49 +61,76 @@ const ProfilePage = ({ className }: ProfilePageProps) => {
         }
     });
 
-    const onChangeFirstname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ firstname: value || '' }));
-    }, [dispatch]);
+    const onChangeFirstname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ firstname: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeLastname = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ lastname: value || '' }));
-    }, [dispatch]);
+    const onChangeLastname = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ lastname: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAge = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
-    }, [dispatch]);
+    const onChangeAge = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCity = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ city: value || '' }));
-    }, [dispatch]);
+    const onChangeCity = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ city: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeUsername = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ username: value || '' }));
-    }, [dispatch]);
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ username: value || '' }));
+        },
+        [dispatch],
+    );
 
-    const onChangeAvatar = useCallback((value?: string) => {
-        dispatch(profileActions.updateProfile({ avatar: value || 'picture' }));
-    }, [dispatch]);
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(
+                profileActions.updateProfile({ avatar: value || 'picture' }),
+            );
+        },
+        [dispatch],
+    );
 
-    const onChangeCurrency = useCallback((currency: Currency) => {
-        dispatch(profileActions.updateProfile({ currency }));
-    }, [dispatch]);
+    const onChangeCurrency = useCallback(
+        (currency: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch],
+    );
 
-    const onChangeCountry = useCallback((country: Country) => {
-        dispatch(profileActions.updateProfile({ country }));
-    }, [dispatch]);
+    const onChangeCountry = useCallback(
+        (country: Country) => {
+            dispatch(profileActions.updateProfile({ country }));
+        },
+        [dispatch],
+    );
 
     return (
         <DynamicModuleLoader reducers={redusers}>
             <Page className={classNames('', {}, [className])}>
                 <ProfilePageHeader />
-                {validateErrors?.length && validateErrors.map((error) => (
-                    <Text
-                        key={error}
-                        theme={TextTheme.ERROR}
-                        text={validateErrorTranslates[error]}
-                    />
-                ))}
+                {validateErrors?.length &&
+                    validateErrors.map((error) => (
+                        <Text
+                            key={error}
+                            theme={TextTheme.ERROR}
+                            text={validateErrorTranslates[error]}
+                        />
+                    ))}
                 <ProfileCard
                     data={formData}
                     isLoading={isLoading}

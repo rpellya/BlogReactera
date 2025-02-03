@@ -18,7 +18,6 @@ const options: SelectOptions[] = [
     { value: Country.Kazakhstan, label: Country.Kazakhstan },
     { value: Country.Russia, label: Country.Russia },
     { value: Country.Turkey, label: Country.Turkey },
-
 ];
 
 export const CountrySelect = ({
@@ -29,11 +28,14 @@ export const CountrySelect = ({
 }: CurrencySelectProps) => {
     const { t } = useTranslation();
 
-    const onChangeHandler = useCallback((value: string) => {
-        if (onChange) {
-            onChange(value as Country);
-        }
-    }, [onChange]);
+    const onChangeHandler = useCallback(
+        (value: string) => {
+            if (onChange) {
+                onChange(value as Country);
+            }
+        },
+        [onChange],
+    );
 
     return (
         <Select

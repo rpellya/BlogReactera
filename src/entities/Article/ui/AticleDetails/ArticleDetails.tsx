@@ -6,19 +6,18 @@ import {
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import {
-    fetchArticleById,
-} from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
+import { fetchArticleById } from 'entities/Article/model/services/fetchArticleById/fetchArticleById';
 import { useSelector } from 'react-redux';
-import {
-    Text, TextAlign, TextSize, TextTheme,
-} from 'shared/ui/Text/Text';
+import { Text, TextAlign, TextSize, TextTheme } from 'shared/ui/Text/Text';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import EyeIcon from 'shared/assets/icons/eye.svg';
 import CalendarIcon from 'shared/assets/icons/calendar.svg';
 import { Icon } from 'shared/ui/Icon/Icon';
-import { ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article';
+import {
+    ArticleBlock,
+    ArticleBlockType,
+} from 'entities/Article/model/types/article';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import cls from './ArticleDetails.module.scss';
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
@@ -29,9 +28,7 @@ import {
 } from '../../model/selectors/articleDetails';
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
-import {
-    ArticleImageBlockComponent,
-} from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
+import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 
 interface ArticleDetailsProps {
     id?: string;
@@ -90,7 +87,12 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
     if (isLoading) {
         content = (
             <>
-                <Skeleton className={cls.avatar} width={200} height={200} border="50%" />
+                <Skeleton
+                    className={cls.avatar}
+                    width={200}
+                    height={200}
+                    border="50%"
+                />
                 <Skeleton className={cls.title} width={200} height={32} />
                 <Skeleton className={cls.skeleton} width={200} height={24} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
@@ -109,7 +111,11 @@ export const ArticleDetails = memo(({ className, id }: ArticleDetailsProps) => {
         content = (
             <>
                 <div className={cls.avatarWrapper}>
-                    <Avatar className={cls.avatar} size={200} src={article?.img} />
+                    <Avatar
+                        className={cls.avatar}
+                        size={200}
+                        src={article?.img}
+                    />
                 </div>
                 <Text
                     text={article?.subtitle}

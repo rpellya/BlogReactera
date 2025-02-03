@@ -6,7 +6,7 @@ import { Button, ButtonVariant } from '../Button/Button';
 
 interface LangSwitcherProps {
     className?: string;
-    short?: boolean
+    short?: boolean;
 }
 
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {

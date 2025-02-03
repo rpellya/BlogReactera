@@ -13,13 +13,16 @@ interface ArticleViewSelectorProps {
     onViewClick?: (view: ArticleView) => void;
 }
 
-const viewTypes = [{
-    view: ArticleView.LIST,
-    icon: ListIcon,
-}, {
-    view: ArticleView.TILE,
-    icon: TileIcon,
-}];
+const viewTypes = [
+    {
+        view: ArticleView.LIST,
+        icon: ListIcon,
+    },
+    {
+        view: ArticleView.TILE,
+        icon: TileIcon,
+    },
+];
 
 export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
     const { className, onViewClick, view } = props;
@@ -35,7 +38,9 @@ export const ArticleViewSelector = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.selected]: viewType.view === view })}
+                        className={classNames('', {
+                            [cls.selected]: viewType.view === view,
+                        })}
                     />
                 </Button>
             ))}

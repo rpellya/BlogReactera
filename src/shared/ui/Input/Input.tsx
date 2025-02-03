@@ -1,11 +1,16 @@
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import React, {
-    InputHTMLAttributes, memo, useEffect, useRef, useState,
+    InputHTMLAttributes,
+    memo,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 import cls from './Input.module.scss';
 
 type HTMLInputProps = Omit<
-    InputHTMLAttributes<HTMLInputElement>, 'value' | 'onChange' | 'readOnly'
+    InputHTMLAttributes<HTMLInputElement>,
+    'value' | 'onChange' | 'readOnly'
 >;
 
 interface InputProps extends HTMLInputProps {
@@ -64,9 +69,7 @@ export const Input = memo((props: InputProps) => {
     return (
         <div className={classNames(cls.InputWrapper, mods, [className])}>
             {placeholder && (
-                <div className={cls.placeholder}>
-                    {`${placeholder}>`}
-                </div>
+                <div className={cls.placeholder}>{`${placeholder}>`}</div>
             )}
             <div className={cls.caretWrapper}>
                 <input

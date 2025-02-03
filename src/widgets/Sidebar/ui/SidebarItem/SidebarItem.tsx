@@ -9,7 +9,7 @@ import cls from './SidebarItem.module.scss';
 
 interface SidebarItemProps {
     item: SidebarItemsListType;
-    collapsed: boolean
+    collapsed: boolean;
 }
 
 export const SidebarItem = memo(({ item, collapsed }: SidebarItemProps) => {

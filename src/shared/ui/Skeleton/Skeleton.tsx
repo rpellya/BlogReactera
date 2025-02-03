@@ -6,22 +6,22 @@ interface SkeletonProps {
     className?: string;
     height?: string | number;
     width?: string | number;
-    border?: string
+    border?: string;
 }
 
-export const Skeleton = memo(({
-    className, border, height, width,
-}: SkeletonProps) => {
-    const styles: CSSProperties = {
-        height,
-        width,
-        borderRadius: border,
-    };
+export const Skeleton = memo(
+    ({ className, border, height, width }: SkeletonProps) => {
+        const styles: CSSProperties = {
+            height,
+            width,
+            borderRadius: border,
+        };
 
-    return (
-        <div
-            className={classNames(cls.Skeleton, {}, [className])}
-            style={styles}
-        />
-    );
-});
+        return (
+            <div
+                className={classNames(cls.Skeleton, {}, [className])}
+                style={styles}
+            />
+        );
+    },
+);

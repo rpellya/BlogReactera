@@ -12,7 +12,9 @@ export default {
     },
 } as ComponentMeta<typeof CommentList>;
 
-const Template: ComponentStory<typeof CommentList> = (args) => <CommentList {...args} />;
+const Template: ComponentStory<typeof CommentList> = (args) => (
+    <CommentList {...args} />
+);
 
 export const Normal = Template.bind({});
 Normal.args = {
@@ -44,6 +46,5 @@ Dark.args = {
             user: { id: '2', username: 'user' },
         },
     ],
-
 };
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

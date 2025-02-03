@@ -1,6 +1,10 @@
 import React, {
     MutableRefObject,
-    ReactNode, useCallback, useEffect, useRef, useState,
+    ReactNode,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
@@ -26,7 +30,9 @@ export const Modal = ({
 }: ModalProps) => {
     const [isClosing, setIsClosing] = useState<boolean>(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timerRef = useRef() as MutableRefObject<
+        ReturnType<typeof setTimeout>
+    >;
     const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
@@ -39,11 +45,14 @@ export const Modal = ({
         }
     }, [onClose]);
 
-    const oneKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            closeHandler();
-        }
-    }, [closeHandler]);
+    const oneKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                closeHandler();
+            }
+        },
+        [closeHandler],
+    );
 
     useEffect(() => {
         if (isOpen) {

@@ -1,13 +1,11 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-i18n
-    .use(initReactI18next)
-    .init({
-        lng: 'ru',
-        fallbackLng: 'ru',
+i18n.use(initReactI18next).init({
+    lng: 'ru',
+    fallbackLng: 'ru',
 
-        resources: { ru: { translationsNS: {} } },
-    });
+    resources: { ru: { translationsNS: {} } },
+});
 
 export default i18n;

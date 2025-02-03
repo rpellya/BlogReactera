@@ -9,46 +9,41 @@ export const addCommentForArticle = createAsyncThunk<
     Comment,
     string,
     ThunkConfig<string>
->(
-    'articleDetails/addCommentForArticle',
-    async (text, thunkApi) => {
-        const {
-            dispatch, extra, rejectWithValue, getState,
-        } = thunkApi;
+>('articleDetails/addCommentForArticle', async (text, thunkApi) => {
+    const { dispatch, extra, rejectWithValue, getState } = thunkApi;
 
-        const userData = getUserAuthData(getState());
-        const aricle = getArticleDetailsData(getState());
+    const userData = getUserAuthData(getState());
+    const aricle = getArticleDetailsData(getState());
 
-        if (!userData || !text || !aricle) {
-            return rejectWithValue('no data');
+    if (!userData || !text || !aricle) {
+        return rejectWithValue('no data');
+    }
+
+    try {
+        const response = await extra.api.post<Comment>('/comments', {
+            text,
+            articleId: aricle.id,
+            userId: userData.id,
+        });
+
+        if (!response.data) {
+            throw new Error();
         }
 
-        try {
-            const response = await extra.api.post<Comment>('/comments', {
-                text,
-                articleId: aricle.id,
-                userId: userData.id,
-            });
+        const newComment: Comment = {
+            id: response.data.id,
+            text: response.data.text,
+            user: userData,
+        };
 
-            if (!response.data) {
-                throw new Error();
-            }
+        dispatch(articleDetailsCommentsActions.addComment(newComment));
 
-            const newComment: Comment = {
-                id: response.data.id,
-                text: response.data.text,
-                user: userData,
-            };
+        // It is better to directly add a comment rather than re-requesting all comments on the article
+        // dispatch(fetchCommentsByArticleId(article.id));
 
-            dispatch(articleDetailsCommentsActions.addComment(newComment));
-
-            // It is better to directly add a comment rather than re-requesting all comments on the article
-            // dispatch(fetchCommentsByArticleId(article.id));
-
-            return response.data;
-        } catch (error) {
-            console.log(error);
-            return rejectWithValue('error');
-        }
-    },
-);
+        return response.data;
+    } catch (error) {
+        console.log(error);
+        return rejectWithValue('error');
+    }
+});

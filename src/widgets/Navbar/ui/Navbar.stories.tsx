@@ -28,6 +28,8 @@ Blue.decorators = [ThemeDecorator(Theme.BLUE), StoreDecorator({})];
 
 export const AuthNavbar = Template.bind({});
 AuthNavbar.args = {};
-AuthNavbar.decorators = [StoreDecorator({
-    user: { authData: {} },
-})];
+AuthNavbar.decorators = [
+    StoreDecorator({
+        user: { authData: {} },
+    }),
+];

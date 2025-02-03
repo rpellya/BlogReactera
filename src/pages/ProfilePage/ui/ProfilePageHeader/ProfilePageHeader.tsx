@@ -41,38 +41,35 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     return (
         <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
             <Text title={t('Profile')} />
-            {canEdit
-                && (
-                    <div className={cls.btnsWrapper}>
-                        {readOnly
-                            ? (
-                                <Button
-                                    className={cls.editBtn}
-                                    theme={ButtonVariant.OUTLINE}
-                                    onClick={onEditClick}
-                                >
-                                    {t('Edit')}
-                                </Button>
-                            )
-                            : (
-                                <>
-                                    <Button
-                                        className={cls.saveBtn}
-                                        theme={ButtonVariant.OUTLINE}
-                                        onClick={onSave}
-                                    >
-                                        {t('Save')}
-                                    </Button>
-                                    <Button
-                                        theme={ButtonVariant.OUTLINE_RED}
-                                        onClick={onCancelEdit}
-                                    >
-                                        {t('Cancel')}
-                                    </Button>
-                                </>
-                            )}
-                    </div>
-                )}
+            {canEdit && (
+                <div className={cls.btnsWrapper}>
+                    {readOnly ? (
+                        <Button
+                            className={cls.editBtn}
+                            theme={ButtonVariant.OUTLINE}
+                            onClick={onEditClick}
+                        >
+                            {t('Edit')}
+                        </Button>
+                    ) : (
+                        <>
+                            <Button
+                                className={cls.saveBtn}
+                                theme={ButtonVariant.OUTLINE}
+                                onClick={onSave}
+                            >
+                                {t('Save')}
+                            </Button>
+                            <Button
+                                theme={ButtonVariant.OUTLINE_RED}
+                                onClick={onCancelEdit}
+                            >
+                                {t('Cancel')}
+                            </Button>
+                        </>
+                    )}
+                </div>
+            )}
         </div>
     );
 };

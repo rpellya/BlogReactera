@@ -1,4 +1,8 @@
-import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
+import {
+    createEntityAdapter,
+    createSlice,
+    PayloadAction,
+} from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/StoreProvider';
 import {
     Article,
@@ -46,7 +50,10 @@ export const articlePageSlice = createSlice({
     reducers: {
         setView: (state, action: PayloadAction<ArticleView>) => {
             state.view = action.payload;
-            localStorage.setItem(ARTICLES_VIEW_LOCALSTORAGE_KEY, action.payload);
+            localStorage.setItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+                action.payload,
+            );
         },
         setPage: (state, action: PayloadAction<number>) => {
             state.page = action.payload;
@@ -64,7 +71,9 @@ export const articlePageSlice = createSlice({
             state.type = action.payload;
         },
         initState: (state) => {
-            const view = localStorage.getItem(ARTICLES_VIEW_LOCALSTORAGE_KEY) as ArticleView;
+            const view = localStorage.getItem(
+                ARTICLES_VIEW_LOCALSTORAGE_KEY,
+            ) as ArticleView;
             state.view = view;
             state.limit = view === ArticleView.LIST ? 4 : 17;
             state._inited = true;
@@ -82,20 +91,17 @@ export const articlePageSlice = createSlice({
                     articlesAdapter.removeAll(state);
                 }
             })
-            .addCase(
-                fetchArticlesList.fulfilled,
-                (state, action) => {
-                    state.isLoading = false;
-                    state.hasMore = action.payload.length >= state.limit;
+            .addCase(fetchArticlesList.fulfilled, (state, action) => {
+                state.isLoading = false;
+                state.hasMore = action.payload.length >= state.limit;
 
-                    // every time the user gets a new list of articles when filtering/sorting/searching - the user has to refresh the state to overwrite all the articles in the list, rather than adding new ones at the end as with infinite loading
-                    if (action.meta.arg.replace) {
-                        articlesAdapter.setAll(state, action.payload);
-                    } else {
-                        articlesAdapter.addMany(state, action.payload);
-                    }
-                },
-            )
+                // every time the user gets a new list of articles when filtering/sorting/searching - the user has to refresh the state to overwrite all the articles in the list, rather than adding new ones at the end as with infinite loading
+                if (action.meta.arg.replace) {
+                    articlesAdapter.setAll(state, action.payload);
+                } else {
+                    articlesAdapter.addMany(state, action.payload);
+                }
+            })
             .addCase(fetchArticlesList.rejected, (state, action) => {
                 state.isLoading = false;
                 state.error = action.payload;
