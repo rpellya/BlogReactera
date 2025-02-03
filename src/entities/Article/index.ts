@@ -15,3 +15,4 @@ export {
 
 export { ArticleViewSelector } from './ui/ArticleViewSelector/ArticleViewSelector';
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs';
+export { ArticleList } from './ui/ArticleList/ArticleList';
