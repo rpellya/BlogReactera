@@ -1,10 +1,10 @@
 {
-  "The article was not found": "The article was not found",
-  "An error occurred while loading the article": "An error occurred while loading the article",
-  "Article details": "Article details",
-  "Comments": "Comments",
-  "Enter the comment": "Enter the comment",
-  "Send comment": "Send comment",
-  "Back to list": "Back to list",
-  "Recommendations": "Recommendations"
+    "The article was not found": "The article was not found",
+    "An error occurred while loading the article": "An error occurred while loading the article",
+    "Article details": "Article details",
+    "Comments": "Comments",
+    "Enter the comment": "Enter the comment",
+    "Send comment": "Send comment",
+    "Back to list": "Back to list",
+    "Recommendations": "Recommendations"
 }
