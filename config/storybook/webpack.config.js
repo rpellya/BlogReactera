@@ -2,6 +2,7 @@
 // Не нашел другого решения, как изменить файл на js
 
 const path = require('path');
+const webpack = require('webpack');
 const { DefinePlugin } = require('webpack');
 const { buildCssLoader } = require('../build/loaders/buildCssLoader.cjs');
 
@@ -22,6 +23,17 @@ module.exports = ({ config }) => {
 
         return rule;
     });
+    
+    config.plugins = config.plugins?.map((plugin) => {
+      if (plugin.constructor.name === 'IgnorePlugin') {
+        return new webpack.IgnorePlugin({
+            resourceRegExp: /react-dom\/client$/,
+            contextRegExp: /(app\/react|app\\react|@storybook\/react|@storybook\\react)/
+        });
+      }
+
+      return plugin;
+    });
 
     config.module?.rules?.push({
         test: /\.svg$/,
@@ -34,6 +46,6 @@ module.exports = ({ config }) => {
         __API__: JSON.stringify(''),
         __PROJECT__: JSON.stringify('storybook'),
     }));
-
+   
     return config;
 };
