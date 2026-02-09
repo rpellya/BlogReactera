@@ -26,16 +26,10 @@ export default {
     sets: {
         desktop: {
             files: ['testplane-tests/**/*.testplane.(t|j)s'],
-            browsers: ['chrome', 'linux-chrome'],
+            browsers: ['linux-chrome'],
         },
     },
     browsers: {
-        chrome: {
-            headless: true,
-            desiredCapabilities: {
-                browserName: 'chrome',
-            },
-        },
         'linux-chrome': {
             desiredCapabilities: {
                 browserName: 'chrome',
