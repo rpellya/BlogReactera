@@ -11,6 +11,7 @@ export default {
     httpTimeout: 20000,
     testTimeout: 90000,
     resetCursor: false,
+    headless: true, // Essential for GitHub CI
     screenshotsDir: (test) => {
         const storyFilePath = getStoryFile(test);
         const storyFileName = path.basename(storyFilePath);
@@ -28,8 +29,21 @@ export default {
             headless: true,
             desiredCapabilities: {
                 browserName: 'chrome',
+                browserVersion: '135',
+                'goog:chromeOptions': {
+                    args: ['--no-sandbox'], // Essential for GitHub CI
+                },
             },
         },
+        // 'linux-chrome': {
+        //     desiredCapabilities: {
+        //         browserName: 'chrome',
+        //         browserVersion: '135',
+        //         'goog:chromeOptions': {
+        //             args: ['--no-sandbox'], // Essential for GitHub CI
+        //         },
+        //     },
+        // },
     },
     prepareBrowser: (browser: WdioBrowser) => {
         setupBrowser(browser);

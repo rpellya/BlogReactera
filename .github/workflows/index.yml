@@ -1,9 +1,11 @@
-name: building, testing, linting
-on:
+name: BlogReactera CI (building, linting, testing)
+
+on: # Правила запуска workflow
     push:
         branches: [master]
     pull_request:
         branches: [master]
+
 jobs:
     pipeline:
         runs-on: ubuntu-latest
@@ -17,20 +19,37 @@ jobs:
               uses: actions/setup-node@v1
               with:
                   node-version: ${{ matrix.node-version }}
+
             - name: install modules
               run: npm install
+
             - name: build production project
               run: npm run build:prod
               if: always()
+
             - name: linting typescript
               run: npm run lint:ts
               if: always()
+
             - name: linting scss
               run: npm run lint:scss
               if: always()
+
             - name: unit testing
               run: npm run test:unit
               if: always()
-            - name: screenshot testing
-              run: npm run test:ui:testplane
-              if: always()
+
+            - name: screenshot testing (Run Testplane)
+              id: testplane
+              uses: gemini-testing/gh-actions-testplane@v1
+              with:
+                  html-report-prefix: 'reports/testplane' # Сохраняем отчеты в имеющуюся директорию reports (для сохранения отчетов на gh-pages)
+                  storybook: 'true' # Запускаем тесты плагина `@testplane/storybook`
+                  browser: 'linux-chrome' # Запускаем тесты только в Chrome
+
+            - name: Upload report
+              if: always() && steps.testplane.outputs.html-report-path # Запускаем шаг при наличии отчета
+              uses: actions/upload-artifact@v4
+              with:
+                  name: testplane-html-report
+                  path: ${{ steps.testplane.outputs.html-report-path }} # Путь, по которому сохранился отчет
