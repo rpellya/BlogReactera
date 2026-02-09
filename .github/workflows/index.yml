@@ -73,3 +73,11 @@ jobs:
                       ### Testplane run finisned
                       Testplane HTML-report is available at https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/${{ steps.testplane.outputs.html-report-path }}
                   comment-tag: testplane_html_report_link
+
+            - name: Clean old reports
+              uses: gemini-testing/gh-actions-reports-ttl-cleaner@v1
+              with:
+                  html-report-prefix: 'reports/testplane'
+                  ttl: '30' # (days)
+                  user-name: 'rpellya'
+                  user-email: 'rpellya@gmail.com'
