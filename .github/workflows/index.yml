@@ -49,13 +49,6 @@ jobs:
                   storybook: 'true' # Запускаем тесты плагина `@testplane/storybook`
                   browser: 'linux-chrome' # Запускаем тесты только в Chrome
 
-            - name: Upload report
-              if: always() && steps.testplane.outputs.html-report-path # Запускаем шаг при наличии отчета
-              uses: actions/upload-artifact@v4
-              with:
-                  name: testplane-html-report
-                  path: ${{ steps.testplane.outputs.html-report-path }} # Путь, по которому сохранился отчет
-
             - name: Deploy report # Выкладывает отчет на gh-pages
               if: always() && steps.testplane.outputs.html-report-path
               uses: peaceiris/actions-gh-pages@v4
