@@ -12,6 +12,7 @@ export default {
     testTimeout: 90000,
     resetCursor: false,
     headless: true, // Essential for GitHub CI
+    screenshotDelay: 500,
     screenshotsDir: (test) => {
         const storyFilePath = getStoryFile(test);
         const storyFileName = path.basename(storyFilePath);
