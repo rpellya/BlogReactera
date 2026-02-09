@@ -16,17 +16,27 @@ export default {
         const storyFilePath = getStoryFile(test);
         const storyFileName = path.basename(storyFilePath);
 
-        return path.join('testplane', `${storyFileName}-screens`, test.id);
+        return path.join(
+            'testplane',
+            `${storyFileName}-screens`,
+            test.id,
+            test.browserId,
+        );
     },
     sets: {
         desktop: {
             files: ['testplane-tests/**/*.testplane.(t|j)s'],
-            browsers: ['chrome'],
+            browsers: ['chrome', 'linux-chrome'],
         },
     },
     browsers: {
         chrome: {
             headless: true,
+            desiredCapabilities: {
+                browserName: 'chrome',
+            },
+        },
+        'linux-chrome': {
             desiredCapabilities: {
                 browserName: 'chrome',
                 browserVersion: '135',
@@ -35,15 +45,6 @@ export default {
                 },
             },
         },
-        // 'linux-chrome': {
-        //     desiredCapabilities: {
-        //         browserName: 'chrome',
-        //         browserVersion: '135',
-        //         'goog:chromeOptions': {
-        //             args: ['--no-sandbox'], // Essential for GitHub CI
-        //         },
-        //     },
-        // },
     },
     prepareBrowser: (browser: WdioBrowser) => {
         setupBrowser(browser);
