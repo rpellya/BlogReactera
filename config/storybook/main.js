@@ -8,6 +8,9 @@ module.exports = {
         '@storybook/addon-interactions',
     ],
     framework: '@storybook/react',
+    features: {
+        buildStoriesJson: true,
+    },
     core: {
         builder: 'webpack5',
     },

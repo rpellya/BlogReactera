@@ -1,5 +1,9 @@
 /build
 node_modules
 storybook-static
+
 .loki/report.html
 .loki/report.json
+
+/testplane-report
+.testplane
