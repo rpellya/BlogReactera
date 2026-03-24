@@ -1,6 +1,7 @@
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable no-use-before-define */
-import { createReadStream } from 'fs';
+import fs, { createReadStream } from 'fs';
+import path from 'path';
 import { createInterface } from 'readline';
 import { Article, RawArticle } from './types';
 
@@ -11,7 +12,22 @@ import { Article, RawArticle } from './types';
  */
 export async function loadArticlesFromFile(
     filePath: string,
+    isLoad: boolean = false,
 ): Promise<Article[]> {
+    if (isLoad) {
+        const abs = path.resolve(filePath);
+        if (!fs.existsSync(abs))
+            throw new Error(`[101] File not found: ${filePath}`);
+        let raw;
+        try {
+            raw = JSON.parse(fs.readFileSync(abs, 'utf8'));
+        } catch {
+            throw new Error(`[102] Invalid JSON: ${filePath}`);
+        }
+        if (!Array.isArray(raw)) throw new Error('[102] JSON must be an array');
+        return normalizeArticles(raw);
+    }
+
     const stream = createReadStream(filePath, { encoding: 'utf8' });
     const rl = createInterface({ input: stream, crlfDelay: Infinity });
 
@@ -40,19 +56,29 @@ export async function loadArticlesFromFile(
 /**
  * Нормализует сырые данные статей к единому формату.
  */
-export function normalizeArticles(rawArticles: RawArticle[]): Article[] {
+export async function normalizeArticles(
+    rawArticles: RawArticle[],
+): Promise<Article[]> {
     return rawArticles.map((raw) => {
-        if (!raw.id) throw new Error('Missing required field: id');
-        if (!raw.title) throw new Error('Missing required field: title');
+        if (!raw.id) throw new Error('[103] Missing required field: id');
+        if (!raw.title) throw new Error('[103] Missing required field: title');
         if (raw.year && (typeof raw.year !== 'number' || raw.year < 1900)) {
-            throw new Error('Invalid year');
+            throw new Error('[103] Invalid year');
         }
+        const year =
+            raw.year !== undefined && raw.year !== null
+                ? raw.year
+                : new Date().getFullYear();
+        if (typeof year !== 'number' || year < 1900)
+            throw new Error(`[104] Invalid year: ${year}`);
+        if (raw.citations !== undefined && !Array.isArray(raw.citations))
+            throw new Error('[104] citations must be an array');
         return {
             id: String(raw.id),
-            title: raw.title,
-            authors: raw.authors || [],
-            year: raw.year || new Date().getFullYear(),
-            citations: raw.citations || raw.references || [],
+            title: String(raw.title),
+            year,
+            authors: Array.isArray(raw.authors) ? raw.authors : [],
+            citations: Array.isArray(raw.citations) ? raw.citations : [],
         };
     });
 }

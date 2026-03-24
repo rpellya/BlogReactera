@@ -1,43 +1,5 @@
 // АЛГОРИТМЫ  (встроены в CLI — не требуют сборки TypeScript)
 
-import path from 'path';
-import fs from 'fs';
-
-export function normalizeArticles(raw: any[]) {
-    return raw.map((a) => {
-        if (!a.id) throw new Error('[103] Missing required field: id');
-        if (!a.title) throw new Error('[103] Missing required field: title');
-        const year =
-            a.year !== undefined && a.year !== null
-                ? a.year
-                : new Date().getFullYear();
-        if (typeof year !== 'number' || year < 1900)
-            throw new Error(`[104] Invalid year: ${year}`);
-        if (a.citations !== undefined && !Array.isArray(a.citations))
-            throw new Error('[104] citations must be an array');
-        return {
-            id: String(a.id),
-            title: String(a.title),
-            year,
-            authors: Array.isArray(a.authors) ? a.authors : [],
-            citations: Array.isArray(a.citations) ? a.citations : [],
-        };
-    });
-}
-
-export function loadArticles(filePath: string) {
-    const abs = path.resolve(filePath);
-    if (!fs.existsSync(abs))
-        throw new Error(`[101] File not found: ${filePath}`);
-    let raw;
-    try {
-        raw = JSON.parse(fs.readFileSync(abs, 'utf8'));
-    } catch {
-        throw new Error(`[102] Invalid JSON: ${filePath}`);
-    }
-    if (!Array.isArray(raw)) throw new Error('[102] JSON must be an array');
-    return normalizeArticles(raw);
-}
 export function pagerankSparse(
     graph: any,
     damping: number,

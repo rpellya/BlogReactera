@@ -1,10 +1,11 @@
-import { buildDense, buildSparse, loadArticles } from '../algorithm/algorithms';
+import { loadArticlesFromFile } from '../../loader';
+import { buildDense, buildSparse } from '../algorithm/algorithms';
 import { state } from '../state';
 import { BOLD, CYAN, GRAY, GREEN } from '../tools';
 
-export function cmdLoad(filePath: string, silent = false) {
+export async function cmdLoad(filePath: string, silent = false) {
     if (!silent) console.log(GRAY('  Загрузка: ') + CYAN(filePath));
-    state.articles = loadArticles(filePath);
+    state.articles = await loadArticlesFromFile(filePath, true);
     state.sparse = buildSparse(state.articles);
     state.dense = buildDense(state.articles);
     state.loadedFile = filePath;
