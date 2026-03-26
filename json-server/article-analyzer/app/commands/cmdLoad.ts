@@ -1,15 +1,18 @@
-import { loadArticlesFromFile } from '../../loader';
-import { buildDense, buildSparse } from '../algorithm/algorithms';
+import { buildDense, buildSparse } from '../algorithm/graph';
 import { state } from '../state';
 import { BOLD, CYAN, GRAY, GREEN } from '../tools';
+import { loadArticlesFromFile } from './loader';
 
 export async function cmdLoad(filePath: string, silent = false) {
     if (!silent) console.log(GRAY('  Загрузка: ') + CYAN(filePath));
+
     state.articles = await loadArticlesFromFile(filePath, true);
     state.sparse = buildSparse(state.articles);
     state.dense = buildDense(state.articles);
     state.loadedFile = filePath;
+
     const edges = state.sparse.outLinks.reduce((s, l) => s + l.length, 0);
+
     if (!silent) {
         console.log(
             GREEN('  ✓ Загружено статей : ') + BOLD(state.articles.length),

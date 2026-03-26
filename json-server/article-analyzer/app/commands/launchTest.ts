@@ -1,11 +1,9 @@
-/* eslint-disable no-console */
 import fs from 'fs';
 import path from 'path';
 import { spawnSync } from 'child_process';
 import { BOLD, CYAN, GRAY, GREEN, HR, NL, RED } from '../tools';
 
 const ROOT = path.join(__dirname, '../../../../');
-// const ROOT = path.join(__dirname);
 
 export function cmdTest(group: string, verbose: boolean) {
     const jestBin = path.join(ROOT, 'node_modules', '.bin', 'jest');

@@ -1,4 +1,4 @@
-import { validateArticle } from '../validator';
+import { validateArticle } from '../algorithm/validator';
 
 describe('Валидация статей', () => {
     test.each([

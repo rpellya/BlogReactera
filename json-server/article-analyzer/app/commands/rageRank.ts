@@ -1,7 +1,7 @@
 import { BOLD, CYAN, DIM, GRAY, GREEN, HR, NL, WHITE, YELLOW } from '../tools';
-import { pagerankDense, pagerankSparse } from '../algorithm/algorithms';
 import { ensureData } from '../ensureData';
 import { state } from '../state';
+import { pagerankDense, pagerankSparse } from '../algorithm/pagerank';
 
 export function cmdPageRank(method: string, iter: number, damping: number) {
     if (!ensureData()) return;
@@ -28,6 +28,16 @@ export function cmdPageRank(method: string, iter: number, damping: number) {
     NL();
 
     const t0 = Date.now();
+
+    if (!state.dense) {
+        console.log('   Нет dense-представления');
+        return;
+    }
+    if (!state.sparse) {
+        console.log('Нет sparse-представления');
+        return;
+    }
+
     const pr = useSparse
         ? pagerankSparse(state.sparse, damping, iter)
         : pagerankDense(state.dense, damping, iter);
@@ -39,8 +49,8 @@ export function cmdPageRank(method: string, iter: number, damping: number) {
     }
 
     const ranked = state.articles
-        .map((a: any, i: string | number) => ({ ...a, rank: pr[i] }))
-        .sort((a: { rank: number }, b: { rank: number }) => b.rank - a.rank);
+        .map((a, i) => ({ ...a, rank: pr[i] }))
+        .sort((a, b) => b.rank - a.rank);
     const maxR = ranked[0].rank;
 
     const topN = Math.min(10, ranked.length);
@@ -69,6 +79,16 @@ export function cmdPageRank(method: string, iter: number, damping: number) {
                     a.title.slice(0, 44).padEnd(45),
                 )}${GRAY(' rank: ')}${GREEN(a.rank.toFixed(6))}`,
             );
+
+            if (!state.sparse) {
+                console.log('Нет sparse-представления');
+                return;
+            }
+            if (!state.articles) {
+                console.log('Нет статей');
+                return;
+            }
+
             console.log(
                 GRAY('       ') +
                     filled +

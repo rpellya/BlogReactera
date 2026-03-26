@@ -26,8 +26,6 @@ import { printBanner, printHelp } from './app/print/help';
 import { MENU_ITEMS, printMenu } from './app/print/menu';
 import { BOLD, CYAN, GRAY, RED, YELLOW } from './app/tools';
 
-const ROOT = path.join(__dirname, '../..');
-
 // ИНТЕРАКТИВНОЕ МЕНЮ (readline, без зависимостей)
 
 (function main() {
@@ -64,10 +62,11 @@ const ROOT = path.join(__dirname, '../..');
                         String(
                             await ask(
                                 GRAY(
-                                    '  Путь к JSON-файлу [data/articles.json]: ',
+                                    '  Путь к JSON-файлу [mock/articles.json]: ',
                                 ),
                             ),
-                        ) || path.join(ROOT, 'data', 'articles.json');
+                        ) ||
+                        path.join(__dirname, 'app', 'mock', 'articles.json');
                     cmdLoad(fp);
                 }
                 if (item.action === 'build-graph') {

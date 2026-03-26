@@ -1,11 +1,17 @@
 import fs from 'fs';
-import { pagerankSparse } from '../algorithm/algorithms.ts';
 import { ensureData } from '../ensureData';
 import { BOLD, CYAN, GRAY, GREEN } from '../tools';
-import { state } from '../state.ts';
+import { state } from '../state';
+import { pagerankSparse } from '../algorithm/pagerank';
 
 export function cmdExport(outFile: string, iter: number, damping: number) {
     if (!ensureData()) return;
+
+    if (!state.sparse) {
+        console.log('Нет данных для экспорта');
+        return;
+    }
+
     const pr = pagerankSparse(state.sparse, damping, iter);
 
     if (!state.sparse || !state.articles) return;
@@ -30,6 +36,7 @@ export function cmdExport(outFile: string, iter: number, damping: number) {
             }))
             .sort((a, b) => b.rank - a.rank),
     };
+
     try {
         fs.writeFileSync(outFile, JSON.stringify(result, null, 2), 'utf8');
         console.log(GREEN('  ✓ Результаты экспортированы: ') + CYAN(outFile));

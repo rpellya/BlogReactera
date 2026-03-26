@@ -1,16 +1,17 @@
-import { pagerankSparse } from '../algorithm/algorithms';
+import { pagerankSparse } from '../algorithm/pagerank';
 import { ensureData } from '../ensureData';
 import { state } from '../state';
 import { BOLD, CYAN, GRAY, GREEN, HR, NL, YELLOW } from '../tools';
 
 export function cmdReport() {
     if (!ensureData()) return;
-    const pr = pagerankSparse(state.sparse, 0.85, 20);
 
     if (!state.sparse) {
         console.log('Ошибка с отчетом');
         return;
     }
+
+    const pr = pagerankSparse(state.sparse, 0.85, 20);
 
     console.log('outLinks', state.sparse.outLinks);
 
@@ -30,6 +31,12 @@ export function cmdReport() {
     console.log(
         GRAY('  Источник данных:    ') + CYAN(state.loadedFile || 'demo'),
     );
+
+    if (!state.articles) {
+        console.log('Нет статей, поэтому не могу посчитать PageRank');
+        return;
+    }
+
     console.log(GRAY('  Всего статей:       ') + BOLD(state.articles.length));
     console.log(GRAY('  Всего цитирований:  ') + BOLD(edges));
     console.log(
@@ -40,10 +47,12 @@ export function cmdReport() {
     NL();
 
     const ranked = state.articles
-        .map((a: any, i: string | number) => ({ ...a, rank: pr[i] }))
-        .sort((a: { rank: number }, b: { rank: number }) => b.rank - a.rank);
+        .map((a, i) => ({ ...a, rank: pr[i] }))
+        .sort((a, b) => b.rank - a.rank);
+
     console.log(BOLD('  Топ статей по PageRank (метод: разреженные списки):'));
     NL();
+
     ranked.forEach((a: { title: string | any[]; rank: number }, i: number) => {
         // eslint-disable-next-line no-nested-ternary
         const medal = i === 0 ? YELLOW('★') : i < 3 ? GRAY('·') : GRAY(' ');

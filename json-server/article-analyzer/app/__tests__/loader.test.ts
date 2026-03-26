@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { Readable } from 'stream';
-import { loadArticlesFromFile } from '../loader';
+import { loadArticlesFromFile } from '../commands/loader';
 
 jest.mock('fs');
 

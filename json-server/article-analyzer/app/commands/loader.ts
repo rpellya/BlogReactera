@@ -1,57 +1,7 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable no-use-before-define */
 import fs, { createReadStream } from 'fs';
 import path from 'path';
 import { createInterface } from 'readline';
-import { Article, RawArticle } from './types';
-
-/**
- * Загружает статьи из JSON-файла с поддержкой потоковой обработки.
- * @param filePath - путь к файлу
- * @returns массив статей в нормализованном формате
- */
-export async function loadArticlesFromFile(
-    filePath: string,
-    isLoad: boolean = false,
-): Promise<Article[]> {
-    if (isLoad) {
-        const abs = path.resolve(filePath);
-        if (!fs.existsSync(abs))
-            throw new Error(`[101] File not found: ${filePath}`);
-        let raw;
-        try {
-            raw = JSON.parse(fs.readFileSync(abs, 'utf8'));
-        } catch {
-            throw new Error(`[102] Invalid JSON: ${filePath}`);
-        }
-        if (!Array.isArray(raw)) throw new Error('[102] JSON must be an array');
-        return normalizeArticles(raw);
-    }
-
-    const stream = createReadStream(filePath, { encoding: 'utf8' });
-    const rl = createInterface({ input: stream, crlfDelay: Infinity });
-
-    let buffer = '';
-    try {
-        for await (const line of rl) {
-            buffer += line;
-        }
-    } catch (err) {
-        // Ошибка при чтении файла (например, файл не найден)
-        throw new Error('File not found');
-    }
-
-    let data;
-    try {
-        data = JSON.parse(buffer);
-    } catch (err) {
-        throw new Error('Invalid JSON format');
-    }
-
-    const articles = Array.isArray(data) ? data : data.articles;
-    // normalizeArticles выбросит собственную ошибку, если данные некорректны
-    return normalizeArticles(articles);
-}
+import { Article, RawArticle } from '../types';
 
 /**
  * Нормализует сырые данные статей к единому формату.
@@ -81,4 +31,53 @@ export async function normalizeArticles(
             citations: Array.isArray(raw.citations) ? raw.citations : [],
         };
     });
+}
+
+/**
+ * Загружает статьи из JSON-файла с поддержкой потоковой обработки.
+ * @param filePath - путь к файлу
+ * @returns массив статей в нормализованном формате
+ */
+export async function loadArticlesFromFile(
+    filePath: string,
+    isLoad: boolean = false,
+): Promise<Article[]> {
+    if (isLoad) {
+        const abs = path.resolve(filePath);
+        if (!fs.existsSync(abs))
+            throw new Error(`[101] File not found: ${filePath}`);
+        let raw;
+        try {
+            raw = JSON.parse(fs.readFileSync(abs, 'utf8'));
+        } catch {
+            throw new Error(`[102] Invalid JSON: ${filePath}`);
+        }
+        if (!Array.isArray(raw)) throw new Error('[102] JSON must be an array');
+        return normalizeArticles(raw);
+    }
+
+    const stream = createReadStream(filePath, { encoding: 'utf8' });
+    const rl = createInterface({ input: stream, crlfDelay: Infinity });
+
+    let buffer = '';
+    try {
+        // eslint-disable-next-line no-restricted-syntax
+        for await (const line of rl) {
+            buffer += line;
+        }
+    } catch (err) {
+        // Ошибка при чтении файла (например, файл не найден)
+        throw new Error('File not found');
+    }
+
+    let data;
+    try {
+        data = JSON.parse(buffer);
+    } catch (err) {
+        throw new Error('Invalid JSON format');
+    }
+
+    const articles = Array.isArray(data) ? data : data.articles;
+    // normalizeArticles выбросит собственную ошибку, если данные некорректны
+    return normalizeArticles(articles);
 }

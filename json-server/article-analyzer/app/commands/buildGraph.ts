@@ -4,6 +4,12 @@ import { BOLD, CYAN, GRAY, GREEN, HR, NL, YELLOW } from '../tools';
 
 export function cmdBuildGraph() {
     if (!ensureData()) return;
+
+    if (!state.sparse) {
+        console.log('Ошибка с построением графа, нет sparse-представления');
+        return;
+    }
+
     const edges = state.sparse.outLinks.reduce((s, l) => s + l.length, 0);
     const dangling = state.sparse.outDegree.filter((d) => d === 0).length;
     const avgDeg = (edges / state.sparse.n).toFixed(2);
@@ -35,6 +41,11 @@ export function cmdBuildGraph() {
     );
     NL();
 
+    if (!state.articles) {
+        console.log('Ошибка с построением графа, нет articles');
+        return;
+    }
+
     // Матрица смежности (до 8×8)
     const n = Math.min(state.sparse.n, 8);
     const labels = state.articles
@@ -46,6 +57,8 @@ export function cmdBuildGraph() {
 
     for (let i = 0; i < n; i += 1) {
         const row = Array.from({ length: n }, (_, j) => {
+            if (!state.dense) return GRAY('  0   ');
+
             const v = state.dense.matrix[i][j];
             return v ? GREEN('  1   ') : GRAY('  0   ');
         }).join('');
@@ -56,11 +69,20 @@ export function cmdBuildGraph() {
     // Списки смежности
     console.log(GRAY('  Списки смежности (out[v]):'));
     state.articles.slice(0, 10).forEach((a, i) => {
+        if (!state.sparse) {
+            console.log(
+                GRAY('  ') + BOLD(a.id.padEnd(8)) + GRAY('→ [') + GRAY(']'),
+            );
+            return;
+        }
+
         const neighbors =
             state.sparse.outLinks[i]
-                .map((j) => CYAN(state.articles[j].id))
+                .map((j) => CYAN(state.articles ? state.articles[j].id : '0'))
                 .join(', ') || GRAY('—');
+
         const deg = state.sparse.outDegree[i];
+
         console.log(
             GRAY('  ') +
                 BOLD(a.id.padEnd(8)) +
