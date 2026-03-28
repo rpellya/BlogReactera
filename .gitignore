@@ -2,8 +2,14 @@
 node_modules
 storybook-static
 
+coverage/
+
 .loki/report.html
 .loki/report.json
 
 /testplane-report
 .testplane
+
+# stryker temp files
+.stryker-tmp
+reports/
