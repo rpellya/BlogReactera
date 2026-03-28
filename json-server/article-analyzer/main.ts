@@ -11,6 +11,11 @@
  * Запуск:
  *   npx tsx json-server/article-analyzer/main.ts <- интерактивное меню
  *   npx tsx json-server/article-analyzer/main.ts [command] [options]
+ *
+ *   npx jest json-server/article-analyzer/app/__tests__/  --coverage
+ *
+ * Для запуска мутационного тестирования:
+ * npx stryker run --mutate "json-server/article-analyzer/app/algorithm/**!/*.ts" --incremental
  */
 
 import path from 'path';

@@ -1,7 +1,7 @@
 import { buildDense, buildSparse } from '../algorithm/graph';
 import { state } from '../state';
 import { BOLD, CYAN, GRAY, GREEN } from '../tools';
-import { loadArticlesFromFile } from './loader';
+import { loadArticlesFromFile } from '../algorithm/loader';
 
 export async function cmdLoad(filePath: string, silent = false) {
     if (!silent) console.log(GRAY('  Загрузка: ') + CYAN(filePath));
