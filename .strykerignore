@@ -1,0 +1,9 @@
+**/__tests__/**
+**/*.test.ts
+**/mock/**
+**/node_modules/**
+**/dist/**
+**/coverage/**
+**/stryker-tmp/**
+**/*.d.ts
+src/
