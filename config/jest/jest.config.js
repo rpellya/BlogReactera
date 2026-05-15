@@ -3,9 +3,15 @@
  * https://jestjs.io/docs/configuration
  */
 
-import path from 'path';
+// import path from 'path';
+// import { dirname } from 'node:path';
+// import { fileURLToPath } from 'node:url';
 
-export default {
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+const path = require('path');
+
+module.exports = {
     // All imported modules in your tests should be mocked automatically
     // automock: false,
 
@@ -24,9 +30,12 @@ export default {
 
     // Automatically clear mock calls, instances and results before every test
     clearMocks: true,
-    testEnvironment: 'jsdom',
+    testEnvironment: 'jest-environment-jsdom',
+    transform: {
+        '^.+\\.(ts|tsx)$': 'ts-jest',
+    },
     coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
-    moduleDirectories: ['node_modules'],
+    moduleDirectories: ['node_modules', 'src'],
     moduleFileExtensions: ['js', 'jsx', 'ts', 'tsx', 'json', 'node'],
     modulePaths: ['<rootDir>src'],
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
