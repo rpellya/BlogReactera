@@ -24,6 +24,7 @@
         "paths": {
             "*": ["./src/*"]
         },
+        "types": ["jest", "@testing-library/jest-dom"],
         "esModuleInterop": true,
         // Если какая-либо библиотека не имеет default import,
         // лоадеры вроде ts-loader или babel-loader автоматически создают их

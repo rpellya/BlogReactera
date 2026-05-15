@@ -36,7 +36,7 @@ describe('fetchNextArticlesPage.test', () => {
 
         await thunk.callThunk();
 
-        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
     });
 
@@ -54,7 +54,7 @@ describe('fetchNextArticlesPage.test', () => {
 
         await thunk.callThunk();
 
-        expect(thunk.dispatch).toBeCalledTimes(2);
+        expect(thunk.dispatch).toHaveBeenCalledTimes(2);
         expect(fetchArticlesList).not.toHaveBeenCalled();
     });
 });
