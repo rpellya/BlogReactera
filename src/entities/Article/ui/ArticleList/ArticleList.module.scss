@@ -1,8 +1,17 @@
 .TILE {
     display: flex;
     flex-wrap: wrap;
-    column-gap: 24px;
-    row-gap: 16px;
+    gap: 30px;
+
+    .card {
+        display: inline-flex;
+        height: 300px;
+    }
+
+    .row {
+        display: flex;
+        gap: 30px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -12,7 +21,7 @@
 }
 
 .LIST {
-    display: flex;
-    row-gap: 16px;
-    flex-direction: column;
+    .card {
+        margin-bottom: 30px;
+    }
 }
