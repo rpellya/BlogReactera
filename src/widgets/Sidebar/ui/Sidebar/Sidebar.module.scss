@@ -5,6 +5,7 @@
     position: relative;
     transition: width 0.2s;
     flex-shrink: 0;
+    padding-left: 30px;
 }
 
 .switchers {
@@ -26,15 +27,9 @@
     z-index: 1000;
 }
 
-.items {
-    margin-top: 20px;
-    margin-left: 30px;
-    display: flex;
-    flex-direction: column;
-}
-
 .collapsed {
     width: var(--sidebar-width-collapsed);
+    padding-left: 0;
 
     .switchers {
         flex-direction: column;
