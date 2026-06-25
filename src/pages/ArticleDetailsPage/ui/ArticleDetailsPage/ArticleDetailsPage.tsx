@@ -21,6 +21,7 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
+import { HStack, VStack } from 'shared/ui/Stack';
 import { articleDetailsPageReducer } from '../../model/slices';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
@@ -81,18 +82,14 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     let commentBlock;
     if (!errorArticle) {
         commentBlock = (
-            <>
-                <Text
-                    size={TextSize.L}
-                    className={cls.commentTitle}
-                    title={t('Comments')}
-                />
+            <VStack gap="16" max>
+                <Text size={TextSize.L} title={t('Comments')} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList
                     isLoading={commentsIsLoading}
                     comments={comments}
                 />
-            </>
+            </VStack>
         );
     }
 
@@ -101,23 +98,26 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <Button theme={ButtonVariant.OUTLINE} onClick={onBackToList}>
-                    {t('Back to list')}
-                </Button>
-                <ArticleDetails id={id} />
-                <Text
-                    className={cls.commentTitle}
-                    size={TextSize.L}
-                    title={t('Recommendations')}
-                />
-                <ArticleList
-                    view={ArticleView.TILE}
-                    articles={recommendations}
-                    isLoading={recommendationsIsLoading}
-                    className={cls.recommendations}
-                    target="_blank"
-                />
-                {commentBlock}
+                <VStack max gap="16">
+                    <Button
+                        theme={ButtonVariant.OUTLINE}
+                        onClick={onBackToList}
+                    >
+                        {t('Back to list')}
+                    </Button>
+                    <ArticleDetails id={id} />
+                    <Text size={TextSize.L} title={t('Recommendations')} />
+                    <HStack>
+                        <ArticleList
+                            view={ArticleView.TILE}
+                            articles={recommendations}
+                            isLoading={recommendationsIsLoading}
+                            className={cls.recommendations}
+                            target="_blank"
+                        />
+                    </HStack>
+                    {commentBlock}
+                </VStack>
             </Page>
         </DynamicModuleLoader>
     );

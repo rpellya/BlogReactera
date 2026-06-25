@@ -12,7 +12,7 @@ import {
 import { useSelector } from 'react-redux';
 import { useCallback } from 'react';
 import { getUserAuthData } from 'entities/User';
-import cls from './ProfilePageHeader.module.scss';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ProfilePageHeaderProps {
     className?: string;
@@ -39,22 +39,24 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
     }, [dispatch]);
 
     return (
-        <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
+        <HStack
+            max
+            justify="between"
+            className={classNames('', {}, [className])}
+        >
             <Text title={t('Profile')} />
             {canEdit && (
-                <div className={cls.btnsWrapper}>
+                <div>
                     {readOnly ? (
                         <Button
-                            className={cls.editBtn}
                             theme={ButtonVariant.OUTLINE}
                             onClick={onEditClick}
                         >
                             {t('Edit')}
                         </Button>
                     ) : (
-                        <>
+                        <HStack>
                             <Button
-                                className={cls.saveBtn}
                                 theme={ButtonVariant.OUTLINE}
                                 onClick={onSave}
                             >
@@ -66,10 +68,10 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                             >
                                 {t('Cancel')}
                             </Button>
-                        </>
+                        </HStack>
                     )}
                 </div>
             )}
-        </div>
+        </HStack>
     );
 };
