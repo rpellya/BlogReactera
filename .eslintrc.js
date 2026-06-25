@@ -51,6 +51,7 @@ module.exports = {
                     'to',
                     'target',
                     'justify',
+                    'component',
                     'align',
                     'direction',
                     'gap',
