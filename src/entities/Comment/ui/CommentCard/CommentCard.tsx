@@ -19,8 +19,8 @@ export const CommentCard = memo(({ className, comment }: CommentCardProps) => {
     }
     return (
         <VStack
-            gap="8"
             max
+            gap="8"
             className={classNames(cls.CommentCard, {}, [className])}
         >
             <AppLink to={`${RoutePath.profile}${comment.user.id}`}>

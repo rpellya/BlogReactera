@@ -43,7 +43,11 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
                 className,
             ])}
         >
-            <VStack align={collapsed ? 'center' : 'start'} gap="16">
+            <VStack
+                component="nav"
+                align={collapsed ? 'center' : 'start'}
+                gap="16"
+            >
                 {itemList}
             </VStack>
             <Button
