@@ -2,9 +2,9 @@ name: BlogReactera CI (building, linting, testing)
 
 on: # Правила запуска workflow
     push:
-        branches: [master]
+        branches: [master, develop]
     pull_request:
-        branches: [master]
+        branches: [master, develop]
 
 jobs:
     pipeline:
