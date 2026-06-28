@@ -1,7 +1,8 @@
-import { Select, SelectOptions } from 'shared/ui/Select/Select';
+import { SelectOptions } from 'shared/ui/Select/Select';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useCallback } from 'react';
+import { ListBox } from 'shared/ui/ListBox/ListBox';
 import { Currency } from '../../model/types/currency';
 
 interface CurrencySelectProps {
@@ -36,7 +37,7 @@ export const CurrencySelect = ({
     );
 
     return (
-        <Select
+        <ListBox
             className={classNames('', {}, [className])}
             label={t('Select currency')}
             options={options}
