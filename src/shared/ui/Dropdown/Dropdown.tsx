@@ -1,8 +1,8 @@
 import { Menu } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { Fragment, ReactNode } from 'react';
+import { forwardRef, Fragment, ReactNode } from 'react';
 import { DropdownDirection } from 'shared/types/ui';
-import { AppLink } from '../AppLink/AppLink';
+import { AppLink, AppLinkProps } from '../AppLink/AppLink';
 import cls from './Dropdown.module.scss';
 
 export interface DropdownItem {
@@ -25,6 +25,14 @@ const mapDirectionClass: Record<DropdownDirection, string> = {
     topLeft: cls.optionsTopLeft,
     topRight: cls.optionsTopRight,
 };
+
+const DropDownAppLink = forwardRef<HTMLDivElement, AppLinkProps>(
+    (props, ref) => (
+        <div ref={ref}>
+            <AppLink {...props} />
+        </div>
+    ),
+);
 
 export const Dropdown = ({
     className,
@@ -58,7 +66,7 @@ export const Dropdown = ({
                                 key={index}
                                 disabled={item.disabled}
                                 to={item.href}
-                                as={AppLink}
+                                as={DropDownAppLink}
                             >
                                 {item.content}
                             </Menu.Item>
