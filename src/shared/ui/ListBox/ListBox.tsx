@@ -1,11 +1,10 @@
 import { Fragment } from 'react';
 import { Listbox as HListBox, Transition } from '@headlessui/react';
 import { classNames } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 import { Button } from '../Button/Button';
 import { HStack } from '../Stack';
 import cls from './ListBox.module.scss';
-
-type DropdownDirection = 'top' | 'bottom';
 
 export interface ListBoxItem {
     value: string;
@@ -25,8 +24,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-    bottom: cls.optionsBottom,
-    top: cls.optionsTop,
+    bottomLeft: cls.optionsBottomLeft,
+    bottomRight: cls.optionsBottomRight,
+    topLeft: cls.optionsTopLeft,
+    topRight: cls.optionsTopRight,
 };
 
 export const ListBox = ({
@@ -37,16 +38,12 @@ export const ListBox = ({
     className,
     readonly,
     label,
-    direction = 'bottom',
+    direction = 'bottomLeft',
 }: ListBoxProps) => {
     const optionsClasses = mapDirectionClass[direction];
 
     return (
-        <HStack
-            className={classNames(cls.ListBox, { [cls.disabled]: readonly }, [
-                className,
-            ])}
-        >
+        <HStack>
             {label && <span className={cls.label}>{`${label} >`}</span>}
             <HListBox
                 as="div"
@@ -54,6 +51,7 @@ export const ListBox = ({
                 defaultValue={defaultValue}
                 onChange={onChange}
                 disabled={readonly}
+                className={classNames(cls.ListBox, {}, [className])}
             >
                 <HListBox.Button disabled={readonly} className={cls.trigger}>
                     <Button disabled={readonly} className={cls.buttonTrigger}>
@@ -73,11 +71,11 @@ export const ListBox = ({
                                 disabled={item.disabled}
                                 as={Fragment}
                             >
-                                {({ active, disabled }) => (
+                                {({ active }) => (
                                     <li
                                         className={classNames(cls.item, {
                                             [cls.active]: active,
-                                            [cls.disabled]: disabled,
+                                            [cls.disabled]: item.disabled,
                                         })}
                                     >
                                         <span>{item.label}</span>
