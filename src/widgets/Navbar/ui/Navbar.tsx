@@ -5,6 +5,9 @@ import { memo, useCallback, useState } from 'react';
 import { LoginModal } from 'features/AuthByUsername';
 import { useDispatch, useSelector } from 'react-redux';
 import { getUserAuthData, userActions } from 'entities/User';
+import { Dropdown } from 'shared/ui/Dropdown/Dropdown';
+import { Avatar } from 'shared/ui/Avatar/Avatar';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -30,13 +33,21 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     if (authData) {
         return (
             <header className={classNames(cls.Navbar, {}, [className])}>
-                <Button
-                    theme={ButtonVariant.CLEAR_INVERTED}
-                    className={cls.links}
-                    onClick={onLogout}
-                >
-                    {t('Logout')}
-                </Button>
+                <Dropdown
+                    direction="bottomLeft"
+                    className={cls.dropdown}
+                    items={[
+                        {
+                            content: t('Profile'),
+                            href: RoutePath.profile + authData.id,
+                        },
+                        {
+                            content: t('Logout'),
+                            onClick: onLogout,
+                        },
+                    ]}
+                    trigger={<Avatar size={30} src={authData.avatar} />}
+                />
                 <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
             </header>
         );

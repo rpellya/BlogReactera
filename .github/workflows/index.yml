@@ -50,7 +50,7 @@ jobs:
                   browser: 'linux-chrome' # Запускаем тесты только в Chrome
 
             - name: Deploy report # Выкладывает отчет на gh-pages
-              if: always() && steps.testplane.outputs.html-report-path
+              if: always() && steps.testplane.outputs.html-report-path && github.event_name == 'pull_request'
               uses: peaceiris/actions-gh-pages@v4
               with:
                   github_token: ${{ secrets.GITHUB_TOKEN }} # Токен поставляется Github, дополнительной настройки не требуется

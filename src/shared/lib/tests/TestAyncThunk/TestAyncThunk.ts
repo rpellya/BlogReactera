@@ -8,8 +8,6 @@ type AcrionCreatorType<Return, Arg, RejectedValue> = (
 
 jest.mock('axios');
 
-const mockedAxios = jest.mocked(axios, true); //  for typescript
-
 /**
  * For working in tests with axios mocked data
  * @augments api
@@ -22,7 +20,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
 
     getState: () => StateSchema;
 
-    api: jest.MockedFunctionDeep<AxiosStatic>;
+    api: jest.Mocked<AxiosStatic>;
 
     navigate: jest.MockedFn<any>;
 
@@ -37,7 +35,7 @@ export class TestAsyncThunk<Return, Arg, RejectedValue> {
         this.dispatch = jest.fn();
         this.getState = jest.fn(() => state as StateSchema);
 
-        this.api = mockedAxios;
+        this.api = axios as jest.Mocked<AxiosStatic>;
         this.navigate = jest.fn();
     }
 

@@ -1,6 +1,7 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Theme } from 'app/providers/ThemeProvider';
+import { Currency } from '../../model/types/currency';
 import { CurrencySelect } from './CurrencySelect';
 
 export default {
@@ -16,9 +17,13 @@ const Template: ComponentStory<typeof CurrencySelect> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {};
+Primary.args = {
+    value: Currency.EUR,
+};
 
 export const Dark = Template.bind({});
-Dark.args = {};
+Dark.args = {
+    value: Currency.RUB,
+};
 
 Dark.decorators = [ThemeDecorator(Theme.DARK)];

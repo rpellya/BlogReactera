@@ -18,7 +18,13 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint', 'i18next', 'react-hooks'],
+    plugins: [
+        'react',
+        '@typescript-eslint',
+        'i18next',
+        'react-hooks',
+        'pellya-check-fsd-path',
+    ],
     rules: {
         'react/jsx-filename-extension': [
             2,
@@ -40,7 +46,17 @@ module.exports = {
             'error',
             {
                 markupOnly: true,
-                ignoreAttribute: ['data-testid', 'to', 'target'],
+                ignoreAttribute: [
+                    'as',
+                    'data-testid',
+                    'to',
+                    'target',
+                    'justify',
+                    'component',
+                    'align',
+                    'direction',
+                    'gap',
+                ],
             },
         ],
         'max-len': ['error', { ignoreComments: true, code: 125 }],
@@ -55,6 +71,7 @@ module.exports = {
         'no-undef': 'off',
         'react/no-array-index-key': 'off',
         'react/jsx-max-props-per-line': ['error', { maximum: 3 }],
+        'pellya-check-fsd-path/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
