@@ -61,6 +61,7 @@
   "by": "by",
   "created at": "created at",
   "descending": "descending",
+  "error": "error",
   "errors": {
     "incorrectAge": "incorrectAge",
     "incorrectCountry": "incorrectCountry",

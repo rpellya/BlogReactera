@@ -21,11 +21,9 @@ import { AddCommentForm } from 'features/AddCommentForm';
 import { Button, ButtonVariant } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { Page } from 'widgets/Page';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { VStack } from 'shared/ui/Stack';
+import { ArticleRecommendationsList } from 'features/ArticleRecommendationsList';
 import { articleDetailsPageReducer } from '../../model/slices';
-import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
-import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
-import { getArticleRecommendations } from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleComments } from '../../model/slices/articleDetailsCommentsSlice';
 import cls from './ArticleDetailsPage.module.scss';
@@ -47,10 +45,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
     const dispatch = useAppDispatch();
     const comments = useSelector(getArticleComments.selectAll);
     const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
-    const recommendations = useSelector(getArticleRecommendations.selectAll);
-    const recommendationsIsLoading = useSelector(
-        getArticleRecommendationsIsLoading,
-    );
     const errorArticle = useSelector(getArticleDetailsError);
 
     const onBackToList = useCallback(() => {
@@ -66,7 +60,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
-        dispatch(fetchArticleRecommendations());
     });
 
     if (!id) {
@@ -106,16 +99,7 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
                         {t('Back to list')}
                     </Button>
                     <ArticleDetails id={id} />
-                    <Text size={TextSize.L} title={t('Recommendations')} />
-                    <HStack>
-                        <ArticleList
-                            view={ArticleView.TILE}
-                            articles={recommendations}
-                            isLoading={recommendationsIsLoading}
-                            className={cls.recommendations}
-                            target="_blank"
-                        />
-                    </HStack>
+                    <ArticleRecommendationsList />
                     {commentBlock}
                 </VStack>
             </Page>
