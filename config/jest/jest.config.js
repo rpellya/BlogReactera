@@ -45,6 +45,7 @@ module.exports = {
         '\\.s?css$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'), // mock svg files
     },
+    reporters: ['html-reporter/jest', 'default'],
     // roots: [
     //     '<rootDir>',
     // ],
