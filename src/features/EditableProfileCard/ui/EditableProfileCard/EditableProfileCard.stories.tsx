@@ -5,18 +5,18 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import { Currency } from 'entities/Currency';
 import { Country } from 'entities/Country';
 import avatar from 'shared/assets/tests/storybook.jpg';
-import ProfilePage from './ProfilePage';
+import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
-    title: 'pages/ProfilePage',
-    component: ProfilePage,
+    title: 'features/EditableProfileCard',
+    component: EditableProfileCard,
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ProfilePage>;
+} as ComponentMeta<typeof EditableProfileCard>;
 
-const Template: ComponentStory<typeof ProfilePage> = (args) => (
-    <ProfilePage {...args} />
+const Template: ComponentStory<typeof EditableProfileCard> = (args) => (
+    <EditableProfileCard {...args} />
 );
 
 export const Light = Template.bind({});

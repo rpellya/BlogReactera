@@ -20,5 +20,6 @@
         "incorrectUserData": "Incorrect user data",
         "noData": "No data",
         "serverError": "Server error"
-    }
+    },
+    "notFound": "Profile not found"
 }

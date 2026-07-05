@@ -61,6 +61,7 @@
   "by": "by",
   "created at": "created at",
   "descending": "descending",
+  "error": "error",
   "errors": {
     "incorrectAge": "incorrectAge",
     "incorrectCountry": "incorrectCountry",
@@ -70,10 +71,12 @@
   },
   "increasing": "increasing",
   "name": "name",
+  "notFound": "notFound",
   "throw error": "throw error",
   "title": "title",
   "views": "views",
   "Произошла ошибка при загрузке статье": "Произошла ошибка при загрузке статье",
   "Произошла ошибка при загрузке статьи": "Произошла ошибка при загрузке статьи",
+  "Профиль не найден": "Профиль не найден",
   "Статьи не найдены": "Статьи не найдены"
 }

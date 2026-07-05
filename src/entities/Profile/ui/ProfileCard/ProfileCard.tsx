@@ -30,22 +30,21 @@ interface ProfileCardProps {
  * Profile card component for disp user profile information
  * This component isn't depended on any other state
  */
-export const ProfileCard = (props: ProfileCardProps) => {
-    const {
-        className,
-        data,
-        error,
-        isLoading,
-        readonly = false,
-        onChangeFirstname,
-        onChangeLastname,
-        onChangeAge,
-        onChangeCity,
-        onChangeUsername,
-        onChangeAvatar,
-        onChangeCurrency,
-        onChangeCountry,
-    } = props;
+export const ProfileCard = ({
+    className,
+    data,
+    error,
+    isLoading,
+    readonly = false,
+    onChangeFirstname,
+    onChangeLastname,
+    onChangeAge,
+    onChangeCity,
+    onChangeUsername,
+    onChangeAvatar,
+    onChangeCurrency,
+    onChangeCountry,
+}: ProfileCardProps) => {
     const { t } = useTranslation('profile');
 
     if (isLoading) {
