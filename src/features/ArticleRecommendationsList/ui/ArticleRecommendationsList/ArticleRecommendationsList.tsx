@@ -26,11 +26,11 @@ export const ArticleRecommendationsList = memo(
         } = getArticleRecommendationsList(getRandomNumber());
 
         if (isLoading) {
-            <Loader />;
+            return <Loader />;
         }
 
-        if (error) {
-            <Text text={t('Error')} />;
+        if (error || !articles) {
+            return <Text text={t('Error')} />;
         }
 
         return (
@@ -41,6 +41,7 @@ export const ArticleRecommendationsList = memo(
                     articles={articles}
                     isLoading={isLoading}
                     target="_blank"
+                    virtualized={false}
                 />
             </VStack>
         );

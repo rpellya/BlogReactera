@@ -15,6 +15,7 @@ interface ArticleListProps {
     isLoading?: boolean;
     view?: ArticleView;
     target?: HTMLAttributeAnchorTarget;
+    virtualized?: boolean;
 }
 
 const CARD_WIDTH = 250;
@@ -36,6 +37,7 @@ export const ArticleList = ({
     isLoading,
     view = ArticleView.LIST,
     target,
+    virtualized,
 }: ArticleListProps) => {
     const { t } = useTranslation('article');
     const [containerWidth, setContainerWidth] = useState(0);
@@ -132,18 +134,30 @@ export const ArticleList = ({
                             cls[view],
                         ])}
                     >
-                        <List
-                            key={itemsPerRow}
-                            autoHeight
-                            isScrolling={isScrolling}
-                            scrollTop={scrollTop}
-                            onScroll={onChildScroll}
-                            height={height ?? 700}
-                            rowCount={rowCount}
-                            rowHeight={isBig ? 700 : 330}
-                            rowRenderer={rowRendererArticle}
-                            width={width ? width - 80 : 700}
-                        />
+                        {virtualized ? (
+                            <List
+                                key={itemsPerRow}
+                                autoHeight
+                                isScrolling={isScrolling}
+                                scrollTop={scrollTop}
+                                onScroll={onChildScroll}
+                                height={height ?? 700}
+                                rowCount={rowCount}
+                                rowHeight={isBig ? 700 : 330}
+                                rowRenderer={rowRendererArticle}
+                                width={width ? width - 80 : 700}
+                            />
+                        ) : (
+                            articles.map((item) => (
+                                <ArticleListItem
+                                    key={item.id}
+                                    article={item}
+                                    view={view}
+                                    className={cls.card}
+                                    target={target}
+                                />
+                            ))
+                        )}
                         {isLoading && getSkeletons(view)}
                     </div>
                 );
