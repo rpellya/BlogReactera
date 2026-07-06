@@ -24,7 +24,7 @@
     position: absolute;
     right: -32px;
     bottom: 32px;
-    z-index: 1000;
+    z-index: var(--sidebar-z-index);
 }
 
 .collapsed {

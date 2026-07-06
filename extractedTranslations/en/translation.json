@@ -1,5 +1,8 @@
 {
   "About us": "About us",
+  "Admin": "Admin",
+  "Admin panel": "Admin panel",
+  "Admiun": "Admiun",
   "All": "All",
   "All articles": "All articles",
   "An error occurred while loading the article": "An error occurred while loading the article",
@@ -22,6 +25,7 @@
   "Enter the comment": "Enter the comment",
   "Enter username": "Enter username",
   "Error": "Error",
+  "Forbidden access": "Forbidden access",
   "IT": "IT",
   "Increment": "Increment",
   "Loading": {
