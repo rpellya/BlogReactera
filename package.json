@@ -15,7 +15,7 @@
         "lint:scss": "npx stylelint \"**/*.scss\"",
         "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
         "test:unit": "jest --config ./config/jest/jest.config.js",
-        "test:unit:report": "concurrently \"npm run test:unit\" \"npx npx serve html-report\"",
+        "test:unit:report": "concurrently \"npm run test:unit\" \"npx serve html-report\"",
         "test:ui": "npx loki test",
         "test:ui:testplane": "npx testplane --storybook",
         "test:ui:testplane:report": "npx testplane gui --storybook",
