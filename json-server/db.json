@@ -834,21 +834,21 @@
             "id": "1",
             "username": "admin",
             "password": "123",
-            "role": "ADMIN",
+            "roles": ["ADMIN"],
             "avatar": "https://avatars.githubusercontent.com/u/103450915?v=4"
         },
         {
             "id": "2",
             "username": "user",
             "password": "123",
-            "role": "USER",
+            "roles": ["USER"],
             "avatar": "https://artbreeder.b-cdn.net/imgs/32a11d35fc07075fcf994cdaebfd.jpeg"
         },
         {
             "id": "3",
-            "username": "Meduza",
+            "username": "meduza",
             "password": "123",
-            "role": "USER",
+            "roles": ["MANAGER"],
             "avatar": "https://artbreeder.b-cdn.net/imgs/830e379a404fd2264bc42b714886.jpeg"
         }
     ],

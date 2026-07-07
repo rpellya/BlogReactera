@@ -19,5 +19,7 @@
     "Auth form": "Auth form",
     "You introduced a wrong login or password": "You introduced a wrong login or password",
     "Logout": "Logout",
-    "Select currency": "Select currency"
+    "Select currency": "Select currency",
+    "Admin panel": "Админка",
+    "Forbidden access": "This page is not accessible"
 }
