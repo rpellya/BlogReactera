@@ -4,7 +4,7 @@ import { articleData } from 'entities/Article/mocks/data';
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/ArticleDetails/ArticleDetailsPage',
     component: ArticleDetailsPage,
     argTypes: { backgroundColor: { control: 'color' } },
     args: {

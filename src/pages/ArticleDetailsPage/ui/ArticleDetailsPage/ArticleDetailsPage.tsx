@@ -33,16 +33,6 @@ const ArticleDetailsPage = ({ className }: ArticleDetailsPageProps) => {
         navigate(RoutePath.articles);
     }, [navigate]);
 
-    if (!id) {
-        return (
-            <Page
-                className={classNames(cls.ArticleDetailsPage, {}, [className])}
-            >
-                {t('The article was not found')}
-            </Page>
-        );
-    }
-
     return (
         <DynamicModuleLoader reducers={reducers}>
             <Page

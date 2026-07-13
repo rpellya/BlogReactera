@@ -25,8 +25,12 @@ interface ArticleListItemProps {
     target?: HTMLAttributeAnchorTarget;
 }
 
-export const ArticleListItem = (props: ArticleListItemProps) => {
-    const { className, article, view, target } = props;
+export const ArticleListItem = ({
+    className,
+    article,
+    view,
+    target,
+}: ArticleListItemProps) => {
     const { t } = useTranslation('article');
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const image = (
