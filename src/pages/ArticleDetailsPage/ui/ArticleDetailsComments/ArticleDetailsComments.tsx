@@ -14,7 +14,7 @@ import { getArticleComments } from '../../model/slices/articleDetailsCommentsSli
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 
 interface ArticleDetailsCommentsProps {
-    id: string;
+    id?: string;
     className?: string;
 }
 

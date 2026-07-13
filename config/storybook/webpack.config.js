@@ -23,16 +23,17 @@ module.exports = ({ config }) => {
 
         return rule;
     });
-    
-    config.plugins = config.plugins?.map((plugin) => {
-      if (plugin.constructor.name === 'IgnorePlugin') {
-        return new webpack.IgnorePlugin({
-            resourceRegExp: /react-dom\/client$/,
-            contextRegExp: /(app\/react|app\\react|@storybook\/react|@storybook\\react)/
-        });
-      }
 
-      return plugin;
+    config.plugins = config.plugins?.map((plugin) => {
+        if (plugin.constructor.name === 'IgnorePlugin') {
+            return new webpack.IgnorePlugin({
+                resourceRegExp: /react-dom\/client$/,
+                contextRegExp:
+                    /(app\/react|app\\react|@storybook\/react|@storybook\\react)/,
+            });
+        }
+
+        return plugin;
     });
 
     config.module?.rules?.push({
@@ -41,11 +42,13 @@ module.exports = ({ config }) => {
     });
     config.module?.rules?.push(buildCssLoader(true));
 
-    config.plugins.push(new DefinePlugin({
-        __IS_DEV__: JSON.stringify(true),
-        __API__: JSON.stringify(''),
-        __PROJECT__: JSON.stringify('storybook'),
-    }));
-   
+    config.plugins.push(
+        new DefinePlugin({
+            __IS_DEV__: JSON.stringify(true),
+            __API__: JSON.stringify('http://example.ru'),
+            __PROJECT__: JSON.stringify('storybook'),
+        }),
+    );
+
     return config;
 };
