@@ -13,6 +13,7 @@ import {
     ReducersList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
+import { ValidateProfileError } from '../../model/consts/consts';
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData';
 import { getProfileError } from '../../model/selectors/getProfileError/getProfileError';
 import { getProfileIsLoading } from '../../model/selectors/getProfileIsLoading/getProfileIsLoading';
@@ -23,7 +24,6 @@ import {
     profileReducer,
 } from '../../model/slices/profileSlice';
 import { getProfileForm } from '../../model/selectors/getProfileForm/getProfileForm';
-import { ValidateProfileError } from '../../model/types/EditableProfileCardSchema';
 import { EditableProfileCardHeader } from '../EditableProfileCardHeader/EditableProfileCard';
 
 interface EditableProfileCardProps {
