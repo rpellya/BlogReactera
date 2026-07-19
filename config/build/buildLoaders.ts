@@ -11,16 +11,10 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     };
 
     // So far I have disconnected this Lowder because of Extractranslations creating files each time
-    const babelLoader = babelLoaders(options);
+    const codeBabelLoader = babelLoaders({...options, isTsx: false});
+    const tsxCodeBabelLoader = babelLoaders({...options, isTsx: true});
 
     const cssLoader = buildCssLoader(isDev);
-
-    // Если не используется typeScript - нужен babel-loader
-    const typescirptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/,
-    };
 
     const fontLoader = {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
@@ -39,8 +33,8 @@ export function buildLoaders(options: BuildOptions): webpack.RuleSetRule[] {
     return [
         fileLoader,
         svgLoader,
-        babelLoader,
-        typescirptLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
         cssLoader,
         fontLoader,
     ];
