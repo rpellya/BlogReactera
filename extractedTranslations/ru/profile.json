@@ -1,0 +1,22 @@
+{
+  "Cancel": "Cancel",
+  "City": "City",
+  "Edit": "Edit",
+  "Enter link to avatar": "Enter link to avatar",
+  "Enter username": "Enter username",
+  "Profile": "Profile",
+  "Save": "Save",
+  "Select country": "Select country",
+  "There was an error": "There was an error",
+  "Try to update the page": "Try to update the page",
+  "Your age": "Your age",
+  "Your lastname": "Your lastname",
+  "Your name": "Your name",
+  "errors": {
+    "incorrectAge": "incorrectAge",
+    "incorrectCountry": "incorrectCountry",
+    "incorrectUserData": "incorrectUserData",
+    "noData": "noData",
+    "serverError": "serverError"
+  }
+}
